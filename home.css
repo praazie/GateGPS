@@ -36,7 +36,7 @@ p {
 .ctn {
   padding: 10px 25px;
   color: white;
-  background-color: #01AB89;
+  background-color: #024e3d;
   border: none;
 
 }
@@ -182,7 +182,7 @@ p {
 
 
 
-.fst-sec {
+.hero-sec {
   margin-top: clamp(6rem, 10vw, 10rem);
 
 }
@@ -281,14 +281,54 @@ p {
   padding: clamp(7px, 2vw, 10px) clamp(10px, 4vw, 10px);
   border: none;
   color: white;
-  background-color: #01AB89;
+  background-color: #024e3d;
+
 }
 
 .slide-one-btn:hover {
-  background-color: #024e3d;
+  background-color: #01AB89;
 }
 
 
+
+/* section 1 */
+
+.section1-btn {
+  padding: clamp(7px, 2vw, 5px) clamp(10px, 4vw, 10px);
+  border: none;
+  color: white;
+  background-color: #024e3d;
+
+
+}
+
+.bi-bag-fill {
+  vertical-align: 0 !important;
+}
+
+
+.section1-btn:hover {
+  background-color: #01AB89;
+}
+
+.new {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+  width: 48%;
+}
+
+
+@media(max-width:763px) {
+  .new {
+    width: 100%;
+  }
+}
+
+
+.bi::before,
+[class*=" bi-"]::before,
+[class^=bi-]::before {
+  vertical-align: -1px;
+}
 
 
 
