@@ -100,8 +100,8 @@ p {
     position: relative;
     display: inline-block;
     text-decoration: none;
-  
-    
+
+
   }
 
   .underline-hover::after {
@@ -183,7 +183,7 @@ p {
 
 
 .fst-sec {
-  margin-top: clamp(5rem, 10vw, 10rem);
+  margin-top: clamp(6rem, 10vw, 10rem);
 
 }
 
@@ -263,7 +263,7 @@ p {
 
 .dashcam-btn {
   padding: clamp(7px, 2vw, 10px) clamp(15px, 4vw, 20px);
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: clamp(1rem, 2vw, 1rem);
   border: none;
   color: white;
 }
