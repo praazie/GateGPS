@@ -28,6 +28,7 @@ p {
 .navIcon {
   color: black;
   font-size: 1.8rem;
+
   padding: 0.4rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 7px;
@@ -37,7 +38,7 @@ p {
 .ctn {
   padding: 10px 25px;
   color: white;
-  background-color: #024e3d;
+  background-color: #00A991;
   border: none;
 
 }
@@ -263,7 +264,7 @@ p {
 }
 
 .dashcam-btn {
-  padding: clamp(7px, 2vw, 10px) clamp(15px, 4vw, 20px);
+  padding: clamp(5px, 2vw, 10px) clamp(10px, 2vw, 20px);
   font-size: clamp(1rem, 2vw, 1rem);
   border: none;
   color: white;
@@ -282,12 +283,12 @@ p {
   padding: clamp(7px, 2vw, 10px) clamp(10px, 4vw, 10px);
   border: none;
   color: white;
-  background-color: #024e3d;
+  background-color: #00A991;
 
 }
 
 .slide-one-btn:hover {
-  background-color: #01AB89;
+  background-color: #024e3d;
 }
 
 
@@ -298,7 +299,7 @@ p {
   padding: clamp(7px, 2vw, 5px) clamp(10px, 4vw, 10px);
   border: none;
   color: white;
-  background-color: #024e3d;
+  background-color: #00A991;
 
 
 }
@@ -309,7 +310,7 @@ p {
 
 
 .section1-btn:hover {
-  background-color: #01AB89;
+  background-color: #00A991;
 }
 
 .new {
@@ -322,13 +323,39 @@ p {
   .new {
     width: 100%;
   }
+
+  .rbo {
+    position: relative;
+    top: -10rem;
+  }
+
+  .mon-head {
+    position: relative;
+    top: -10rem;
+  }
+
+  .cca {
+    position: relative;
+    top: -25rem;
+  }
+
+  .slide-one-btn {
+    position: relative;
+    top: -3.5rem;
+  }
+
+  .dashcam-btn {
+    position: relative;
+    top: -3.5rem;
+  }
 }
+
 
 
 .bi::before,
 [class*=" bi-"]::before,
 [class^=bi-]::before {
-  vertical-align: -1px;
+  vertical-align: -5px;
 }
 
 
@@ -341,12 +368,13 @@ p {
   font-weight: 900;
 }
 
-.offer-hover:hover {
-  background-color: #01AB89;
-  color: white;
-  border-radius: 1rem;
-  transition: 0.6s all;
+.rboo {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: 200;
+  font-style: normal;
+  font-weight: bolder;
 }
+
 
 
 
