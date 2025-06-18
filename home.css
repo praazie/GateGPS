@@ -185,7 +185,8 @@ p {
 
 
 .hero-sec {
-  margin-top: clamp(6rem, 10vw, 10rem);
+  margin-top: clamp(8rem, 10vw, 10rem);
+
 
 }
 
@@ -200,15 +201,31 @@ p {
   .dot-img {
     top: 5rem;
   }
+
+
+
+  .img-resize {
+    max-width: 100%;
+    margin-top: -5rem;
+
+
+  }
+
+  .img-resizee {
+    max-width: 100%;
+    margin-top: -2.2rem;
+  }
+
+
+  .carousel-inner {
+    height: 550px;
+
+  }
+
 }
 
 
 
-.img-resize {
-  max-width: 100%;
-  height: auto;
-
-}
 
 
 .rbo {
@@ -272,10 +289,12 @@ p {
 
 .blue-btn {
   background-color: #00C2FF;
+  padding: clamp(7px, 2vw, 10px) clamp(10px, 4vw, 10px);
 }
 
 .red-btn {
   background-color: #DB1F1E;
+  padding: clamp(7px, 2vw, 10px) clamp(10px, 4vw, 10px);
 }
 
 
@@ -324,30 +343,24 @@ p {
     width: 100%;
   }
 
-  .rbo {
-    position: relative;
-    top: -10rem;
-  }
 
-  .mon-head {
-    position: relative;
-    top: -10rem;
-  }
 
-  .cca {
-    position: relative;
-    top: -25rem;
-  }
 
   .slide-one-btn {
     position: relative;
-    top: -3.5rem;
+    top: 25rem;
   }
 
   .dashcam-btn {
     position: relative;
-    top: -3.5rem;
+    top: 27.5rem;
   }
+
+  .adjust-btn {
+    position: relative;
+    top: 27.5rem;
+  }
+
 }
 
 
