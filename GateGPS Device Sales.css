@@ -20,6 +20,16 @@ a:hover {
 
 
 
+.shooping-cart {
+    margin-left: 11rem;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
 p {
     padding: 0;
     margin: 0;
@@ -236,11 +246,7 @@ p {
 
 
 
-.bi::before,
-[class*=" bi-"]::before,
-[class^=bi-]::before {
-    vertical-align: -5px;
-}
+
 
 .offcanvas,
 .offcanvas-lg,
@@ -316,13 +322,14 @@ img.scale:hover {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     padding-left: 1rem;
     padding-right: 1rem;
+
 }
 
 
 
 .card-holder {
     background-color: #FEF3D6;
-    border-radius: 0.3rem;
+    border-radius: 1rem;
 }
 
 
