@@ -16,7 +16,7 @@ const productList = [
       { label: "GPRS", value: "Class12, TCP / IP" },
       { label: "Working current", value: "22 mA (DC12 V), 12 mA (DC24 V)" },
       { label: "GPS locating time", value: "Cold start 32 seconds (open sky)" },
-      { label: "Waterproof rating", value: "IP6" }
+
     ]
   },
   {
