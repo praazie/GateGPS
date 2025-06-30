@@ -286,3 +286,13 @@ p {
     color: white;
     border: none;
 }
+
+.addToCart {
+    background-color: #00A991;
+    border: none;
+}
+
+.addToCart:hover {
+    background-color: #024e3d;
+    border: none;
+}
