@@ -25,3 +25,13 @@ viewMoreBtn.addEventListener('click', function () {
     viewMoreBtn.textContent = 'View More';
   }
 });
+
+const cartCountEls = document.querySelectorAll("#cart-count, #cart-counts");
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("gategps-cart")) || [];
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  cartCountEls.forEach(el => el.textContent = totalItems);
+}
+
+updateCartCount();

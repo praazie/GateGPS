@@ -268,11 +268,6 @@ p {
 
 
 
-
-
-
-
-
 .cart-badge {
     width: 18px;
     height: 18px;
@@ -288,132 +283,20 @@ p {
 }
 
 
-
 /*Nav-End */
 
 
 
-
-.hero {
-    background-image: url(Asset/abstract-blur-defocused-library-book-store-shop-interior\ \(1\).jpg);
-    background-size: cover;
-    /* Makes the image cover the section */
-    background-position: center;
-    /* Keeps the image centered */
-    background-repeat: no-repeat;
-    height: 50vh;
-    /* Full screen height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    margin-top: clamp(4rem, 2vw, 10rem);
-
-
-
-}
-
-@media (min-width: 553px) and (max-width: 991.98px) {
-    .hero {
-        height: 30vh;
-    }
-
+.upper {
+    margin-top: 10rem;
 }
 
 
-.store-font {
-    font-size: clamp(3rem, 5vw, 10rem);
-
-}
-
-
-
-
-
-.opposite {
-    margin-top: 2rem;
-}
-
-.top {
-    border-bottom: 1px solid rgb(224, 223, 223);
-}
-
-
-
-
-img.scale {
-    transition: transform 0.4s ease;
-}
-
-img.scale:hover {
-    transform: scale(1.1);
-}
-
-
-.holder {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-    border-radius: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-
-
-}
-
-
-
-.card-holder {
-    background-color: #FEF3D6;
-    border-radius: 1rem;
-}
-
-
-.card-holder img {
-    width: 100%;
-    height: 220px;
-    /* Force equal height */
-    object-fit: contain;
-    /* Avoid image distortion */
-}
-
-@media(max-width:598px) {
-    .card-holder img {
-        width: 100%;
-        height: 150px;
-        /* Force equal height */
-        object-fit: contain;
-        /* Avoid image distortion */
-    }
-
-    .holder {
-        width: 47%;
-    }
-}
-
-
-
-
-.cart-btn {
-    border: none;
-    background-color: #00A991;
-    padding: 5px 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-
-
-
-/* footer */
-.foot-line {
-    border-bottom: 1px solid #01AB89;
-}
-
-.icon {
-    color: #01AB89;
-}
-
-footer {
-    background: url(Asset/black-dotted-mapa-mundi-vector\ 1.png) fixed;
+#fullName:focus,
+#email:focus,
+#address:focus,
+#phone:focus {
+    box-shadow: none !important;
+    border-color: black !important;
+    outline: none !important;
 }

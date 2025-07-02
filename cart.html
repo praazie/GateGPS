@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 
-    <link rel="stylesheet" href="store.css">
+    <link rel="stylesheet" href="cart.css">
 </head>
 
 <body>
@@ -52,16 +52,14 @@
                     class=" d-sm-none d-inline-block  img-fluid">
             </a>
 
-            <div class="d-flex d-lg-none align-items-center shooping-cart position-relative">
-                <a href="cart.html" class="text-dark ">
-                    <i class="fa-solid fa-cart-shopping fs-4"></i>
-                    <span id="cart-count"
-                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        0
-                    </span>
-                </a>
-            </div>
 
+            <div class="d-flex d-lg-none align-items-center shooping-cart position-relative">
+                <i class="fa-solid fa-cart-shopping fs-4"></i>
+                <span id="cart-count"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                </span>
+            </div>
 
 
 
@@ -144,14 +142,11 @@
                     <div class=" d-flex flex-column flex-lg-row sm-btns  gap-3 ">
 
                         <div class="d-none d-lg-flex align-items-center shooping-cart cart-lg position-relative">
-                            <a href="cart.html" class="text-dark ">
-                                <i class="fa-solid fa-cart-shopping fs-5"></i>
-                                <span id="cart-counts" class="position-absolute bg-danger text-white cart-badge">
-                                    0
-                                </span>
-                            </a>
+                            <i class="fa-solid fa-cart-shopping fs-5"></i>
+                            <span id="cart-counts" class="position-absolute bg-danger text-white cart-badge">
+                                0
+                            </span>
                         </div>
-
 
                         <div class="d-flex align-items-center gap-2 ">
                             <button class="ctn con  ">Contact us</button> <span class="shape"><i
@@ -176,131 +171,20 @@
 
 
 
-
-    <!-- first section -->
-    <section class="hero">
-
-    </section>
-
-
-
-    <section class="container opposite">
-        <div class="top">
-            <h4>Our Products</h4>
+    <div class="container top-up">
+        <h2>Your Shopping Cart</h2>
+        <div id="cart-items" class="mt-4"></div>
+        <div class="text-end mt-3">
+            <h4>Total: ₦<span id="cart-total">0</span></h4>
+            <a href="checkout.html" class="btn btn-success mt-2">Checkout</a>
         </div>
-
-        <div class="row gap-lg-2 g-3 gap-2 justify-content-center justify-content-lg-evenly mt-3 ">
-            <!-- Card 1 -->
-
-            <div class="col-5 col-sm-5 col-md-4 col-lg-3 holder   py-3">
-                <a href="product-details.html?id=1">
-                    <div class="card-holder">
-                        <img src="asset/GateGPS-Tracker-DualCommand-mic.png" class="img-fluid scale pt-4 pe-5" alt="">
-                    </div>
-                    <p class="text-center pt-1">GateGPS Tracker Device (GG402)</p>
-                    <div class="text-center">
-                        <p class="d-inline-block new-price fs-5">&#8358;24,000</p>
-                        <strike><span class="old-price fs-6">&#8358;25,000</span></strike>
-                    </div>
-                </a>
-                <button class="w-100 cart-btn" id="add-to-cart-btn">Add To Cart</button>
-            </div>
+    </div>
 
 
-            <!-- Card 2 -->
-
-            <div class="col-5 col-sm-5 col-md-4 col-lg-3 holder  py-3">
-                <a href="product-details.html?id=2">
-                    <div class="card-holder">
-                        <img src="asset/GateGPS-Tracker-DualCommand-NonMic.png" class="img-fluid scale pt-5 pb-5"
-                            alt="">
-                    </div>
-                    <p class="text-center pt-1">GateGPS Tracker Device (GG401)</p>
-                    <div class="text-center">
-                        <p class="d-inline-block new-price fs-5">&#8358;22,000</p>
-                        <strike><span class="old-price fs-6">&#8358;23,000</span></strike>
-                    </div>
-                </a>
-                <button class="w-100 cart-btn" id="add-to-cart-btn">Add To Cart</button>
-            </div>
-
-
-
-            <!-- Card 3 -->
-
-            <div class="col-5 col-sm-5 col-md-4 col-lg-3 holder  py-3">
-                <a href="product-details.html?id=3">
-                    <div class="card-holder ">
-                        <img src="asset/mini-relay-gps.png" class="img-fluid scale pt-4 pb-4" alt="">
-                    </div>
-                    <p class="text-center pt-1">GateGPS Tracker Relay</p>
-                    <div class="text-center">
-                        <p class="d-inline-block new-price fs-5">&#8358;2,500</p>
-                    </div>
-                </a>
-                <button class="w-100 cart-btn" id="add-to-cart-btn">Add To Cart</button>
-            </div>
-
-
-            <!-- Card 4 -->
-            <div class="col-5 col-sm-5 col-md-4 col-lg-3 holder  py-3">
-
-                <a href="product-details.html?id=4">
-                    <div class="card-holder">
-                        <img src="asset/H94bf2b7a629d43faba8099988f8708abo2.png" class="img-fluid scale pt-4 pb-4"
-                            alt="">
-                    </div>
-                    <p class="text-center pt-1">GateGPS Dashcam (GC01)</p>
-                    <div class="text-center">
-                        <p class="d-inline-block new-price fs-5">&#8358;130,000</p>
-                        <strike><span class="old-price fs-6">&#8358;150,000</span></strike>
-                    </div>
-                </a>
-                <button class="w-100 cart-btn" id="add-to-cart-btn">Add To Cart</button>
-            </div>
-
-
-            <!-- Card 5 -->
-
-            <div class="col-5 col-sm-5 col-md-4 col-lg-3 holder  py-3">
-                <a href="product-details.html?id=5">
-                    <div class="card-holder ">
-                        <img src="asset/Dashcam402.png" class="img-fluid scale pt-4 pb-4" alt="">
-                    </div>
-                    <p class="text-center pt-1">GateGPS Dashcam (GC02)</p>
-                    <div class="text-center">
-                        <p class="d-inline-block new-price fs-5">&#8358;120,000</p>
-                    </div>
-                </a>
-                <button class="w-100 cart-btn" id="add-to-cart-btn">Add To Cart</button>
-            </div>
-
-            <!-- Card 6 -->
-
-            <div class="col-5 col-sm-5 col-md-4 col-lg-3 holder  py-3">
-                <a href="product-details.html?id=6">
-                    <div class="card-holder ">
-                        <img src="asset/GateGps-Dashcam-MemoryCard.png" class="img-fluid scale pt-4 pb-4" alt="">
-                    </div>
-                    <p class="text-center pt-1">GateGPS Memory Card</p>
-                    <div class="text-center">
-                        <p class="d-inline-block new-price fs-5">&#8358;5000</p>
-                    </div>
-                </a>
-                <button class="w-100 cart-btn" id="add-to-cart-btn">Add To Cart</button>
-            </div>
-
-
-        </div>
-
-
-
-
-    </section>
 
 
     <!-- footer -->
-    <footer class="pt-0 pt-lg-5 pb-2 px-2 mt-3">
+    <footer class="pt-0 pt-lg-5 pb-2 px-2">
         <div class=" foot-line pt-5 pb-lg-5 pb-2 container ">
             <div class="row d-flex justify-content-between align-content-center pt-5 ">
                 <div class="col-lg-2 col-md-6 col-sm-6">
@@ -394,6 +278,10 @@
 
             </div>
 
+
+
+
+
         </div>
 
 
@@ -410,10 +298,18 @@
 
 
 
+
+
+
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
 
-    <script src="store.js"></script>
+    <script src="cart.js"></script>
 
 </body>

@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 
-    <link rel="stylesheet" href="product-details.css">
+    <link rel="stylesheet" href="checkout.css">
 </head>
 
 <body>
@@ -54,14 +54,13 @@
 
 
             <div class="d-flex d-lg-none align-items-center shooping-cart position-relative">
-                <a href="cart.html" class="text-dark ">
-                    <i class="fa-solid fa-cart-shopping fs-4"></i>
-                    <span id="cart-count"
-                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        0
-                    </span>
-                </a>
+                <i class="fa-solid fa-cart-shopping fs-4"></i>
+                <span id="cart-count"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                </span>
             </div>
+
 
 
 
@@ -87,7 +86,7 @@
                             class="fa-solid fa-xmark fs-1"></i> </button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav  justify-content-center  d-flex align-content-center flex-grow-1">
+                    <ul class="navbar-nav  justify-content-center   d-flex align-content-center flex-grow-1">
                         <li class="nav-item mx-2">
                             <a class="nav-link text-black   underline-hover" aria-current="page" href="#">Home</a>
                         </li>
@@ -100,12 +99,9 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
 
 
-                                <span class="underline-hover ">Solutions</span>
+                                <span class="underline-hover ">Products</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Dashcam Device Sales</a></li>
-
-                                <li><a class="dropdown-item" href="#">GPS Device Sales</a></li>
 
                                 <li><a class="dropdown-item" href="#">White Labelling</a></li>
 
@@ -122,6 +118,8 @@
                                 <li><a class="dropdown-item" href="#">Dashcam Device Features</a></li>
 
                                 <li><a class="dropdown-item" href="#">GPS Device Features</a></li>
+                                <li><a class="dropdown-item" href="#">White-label</a></li>
+                                <li><a class="dropdown-item" href="#">Custom Server</a></li>
                             </ul>
                         </li>
                         <li class="nav-item mx-2 dropdown">
@@ -143,18 +141,14 @@
 
                     <div class=" d-flex flex-column flex-lg-row sm-btns  gap-3 ">
 
-
                         <div class="d-none d-lg-flex align-items-center shooping-cart cart-lg position-relative">
-                            <a href="cart.html" class="text-dark ">
-                                <i class="fa-solid fa-cart-shopping fs-5"></i>
-                                <span id="cart-counts" class="position-absolute bg-danger text-white cart-badge">
-                                    0
-                                </span>
-                            </a>
+                            <i class="fa-solid fa-cart-shopping fs-5"></i>
+                            <span id="cart-counts" class="position-absolute bg-danger text-white cart-badge">
+                                0
+                            </span>
                         </div>
 
-
-                        <div class="d-flex align-items-center gap-2">
+                        <div class="d-flex align-items-center gap-2 ">
                             <button class="ctn con  ">Contact us</button> <span class="shape"><i
                                     class="bi bi-telephone-fill fs-3 color-change  d-inline  d-lg-none"></i></span>
                             <span class="shape"><i
@@ -174,27 +168,52 @@
         </div>
     </nav>
 
-    <div class="container  shift-head">
-        <div class="row align-items-center pb-3" id="product-detail">
 
-            <!-- JS will inject product info here -->
+
+
+
+
+
+
+
+
+
+
+    <div class="container upper">
+        <h2 class="mb-4">Checkout</h2>
+
+        <!-- Cart Summary -->
+        <div id="checkout-summary" class="mb-4"></div>
+
+        <!-- Total -->
+        <div class="text-end mb-4">
+            <h5>Total: ₦<span id="checkout-total">0</span></h5>
+        </div>
+
+        <!-- Customer Info -->
+        <div class="mb-4">
+            <h4>Customer Information</h4>
+            <form id="checkout-form">
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" id="fullName" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Delivery Address</label>
+                    <textarea id="address" class="form-control" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Place Order</button>
+            </form>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -205,6 +224,9 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
 
-    <script src="product-details.js"></script>
+
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <script src="checkout.js"></script>
 
 </body>

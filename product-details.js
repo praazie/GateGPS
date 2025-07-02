@@ -1,10 +1,12 @@
-const productList = [
+const products = [
   {
     id: 1,
     name: "GateGPS Tracker Device (GG402)",
-    price: "24000",
-    oldPrice: "25000",
-    image: "asset/GateGPS Tracker Dual Command mic.png",
+    price: 24000,
+    oldPrice: 25000,
+    image: "asset/GateGPS-Tracker-DualCommand-mic.png",
+    minOrder: 5,
+    imageClass: "custom-img-gg402",
     specifications: [
       { label: "Size", value: "70 mm x 10 mm x 13 mm" },
       { label: "Weight", value: "35g" },
@@ -16,178 +18,217 @@ const productList = [
       { label: "GPRS", value: "Class12, TCP / IP" },
       { label: "Working current", value: "22 mA (DC12 V), 12 mA (DC24 V)" },
       { label: "GPS locating time", value: "Cold start 32 seconds (open sky)" },
-
+      { label: "Waterproof rating", value: "IP6" }
     ]
   },
   {
     id: 2,
     name: "GateGPS Tracker Device (GG401)",
-    price: "22000",
-    oldPrice: "23000",
-    image: "asset/GateGPS Tracker Dual Command Non Mic.png"
+    price: 22000,
+    oldPrice: 23000,
+    image: "asset/GateGPS-Tracker-DualCommand-Non Mic.png",
+    imageClass: "custom-img-gg401",
+    minOrder: 5,
+    specifications: [
+      { label: "Size", value: "70 mm x 10 mm x 13 mm" },
+      { label: "Weight", value: "35g" },
+      { label: "Battery life", value: "55 - 1212 hours" },
+      { label: "GPS sensitivity", value: "Tracking: -165 dBm" },
+      { label: "Position accuracy", value: "5 m" },
+      { label: "Working voltage", value: "9–95 V" },
+      { label: "GSM", value: "850 / 900 / 1800 / 1900 Quad band" },
+      { label: "GPRS", value: "Class12, TCP / IP" },
+      { label: "Working current", value: "22 mA (DC12 V), 12 mA (DC24 V)" },
+      { label: "GPS locating time", value: "Cold start 32 seconds (open sky)" },
+      { label: "Waterproof rating", value: "IP6" }
+    ]
   },
   {
     id: 3,
-    name: "GateGPS Relay",
-    price: "2500",
-    image: "asset/mini-relay-gps.png"
+    name: "GateGPS Tracker Relay",
+    price: 2500,
+    image: "asset/mini-relay-gps.png",
+    minOrder: 1,
+    imageClass: "custom-img-relay",
   },
   {
     id: 4,
     name: "GateGPS Dashcam (GC01)",
-    price: "130000",
-    oldPrice: "150000",
-    image: "asset/H94bf2b7a629d43faba8099988f8708abo 2.png"
+    price: 130000,
+    oldPrice: 150000,
+    image: "asset/H94bf2b7a629d43faba8099988f8708abo2.png",
+    minOrder: 1,
+    imageClass: "custom-img-401",
   },
   {
     id: 5,
     name: "GateGPS Dashcam (GC02)",
-    price: "120000",
-    image: "asset/Dashcam 402.png"
+    price: 120000,
+    image: "/asset/Dashcam402.png",
+    minOrder: 1,
+    imageClass: "custom-img-402",
   },
   {
     id: 6,
     name: "GateGPS Memory Card",
-    prices: {
-      "32GB": 5000,
-      "64GB": 9000,
-      "128GB": 13000
-    },
-    image: "asset/GateGps Dashcam Memory Card.png",
-    defaultVariant: "32GB"
+    priceOptions: [
+      { size: "32GB", price: 5000 },
+      { size: "64GB", price: 9000 },
+      { size: "128GB", price: 13000 }
+    ],
+    image: "/asset/GateGps-Dashcam-MemoryCard.png",
+    minOrder: 1,
+    imageClass: "custom-img-card",
   }
 ];
 
-// Get product ID
-const params = new URLSearchParams(window.location.search);
-const productId = parseInt(params.get("id"));
-const product = productList.find(p => p.id === productId);
-const container = document.getElementById("product-detail");
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("gategps-cart")) || [];
+  const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
-if (product) {
-  const trackersWithMinQty5 = [1, 2]; // GG402 and GG401
-  const minQty = trackersWithMinQty5.includes(product.id) ? 5 : 1
+  const badgeMobile = document.getElementById("cart-count");
+  const badgeDesktop = document.getElementById("cart-counts");
 
-  let unitPrice = 0;
-  let selectedVariant = "";
+  if (badgeMobile) badgeMobile.textContent = totalCount;
+  if (badgeDesktop) badgeDesktop.textContent = totalCount;
+}
 
-  const hasVariants = product.prices !== undefined;
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const productId = parseInt(params.get("id"));
+  const product = products.find(p => p.id === productId);
+  const container = document.getElementById("product-detail");
 
-  if (hasVariants) {
-    selectedVariant = product.defaultVariant;
-    unitPrice = product.prices[selectedVariant];
-  } else {
-    unitPrice = parseInt(product.price);
-  }
+  if (!product || !container) return;
 
-  // Specifications (if any)
-  let specsList = "";
-  if (product.specifications && product.specifications.length > 0) {
-    specsList = `
-      <h5 class="mt-4 mb-2">Specifications:</h5>
-      <ul class="list-group mb-4">
-        ${product.specifications.map(spec => `
-          <li class="list-group-item d-flex justify-content-between">
-            <strong>${spec.label}</strong> <span>${spec.value}</span>
-          </li>
-        `).join("")}
-      </ul>
-    `;
-  }
+  const cart = JSON.parse(localStorage.getItem("gategps-cart")) || [];
+  const cartItem = cart.find(item => item.id === product.id);
 
-  // Variant selector (for TF card)
-  let variantSelector = "";
-  if (hasVariants) {
-    variantSelector = `
-      <div class="mb-3">
-        <label class="form-label fw-semibold">Select Size:</label>
-        <div class="btn-group" role="group">
-          ${Object.keys(product.prices).map(size => `
-            <button type="button" class="btn btn-outline-primary variant-btn ${size === selectedVariant ? 'active' : ''}" data-size="${size}">
-              ${size}
-            </button>
-          `).join("")}
-        </div>
+  let currentQuantity = cartItem ? cartItem.quantity : (product.minOrder || 1);
+  let unitPrice = product.priceOptions ? product.priceOptions[0].price : product.price;
+
+  const specificationHTML = product.specifications ? `
+    <h5>Specifications:</h5>
+    <ul>
+      ${product.specifications.map(spec => `<li><strong>${spec.label}:</strong> ${spec.value}</li>`).join("")}
+    </ul>
+  ` : "";
+
+  const priceOptionsHTML = product.priceOptions ? `
+    <div class="mb-3">
+      <label><strong>Select Storage Size:</strong></label>
+      <div class="btn-group" role="group">
+        ${product.priceOptions.map((opt, index) => `
+          <button type="button" class="btn variant-btn memory-btn ${index === 0 ? 'active' : ''}" data-price="${opt.price}">
+            ${opt.size}
+          </button>
+        `).join('')}
       </div>
-    `;
-  }
-
-  // Inject into HTML
-  container.innerHTML = `
-    <div class="col-md-6 mb-4">
-      <img src="${product.image}" class="img-fluid rounded shadow" alt="${product.name}">
     </div>
-    <div class="col-md-6">
-      <h2 class="fw-bold">${product.name}</h2>
+  ` : "";
 
-      ${specsList}
-      ${variantSelector}
+  container.innerHTML = `
+    <div class="col-md-6 shadow py-5 d-flex align-item-center justify-content-center g-2">
+     <img src="${product.image}" class="img-fluid ${product.imageClass || ''}"  alt="${product.name}">
 
-      <p class="fs-5 text-muted mb-0">Unit Price: ₦<span id="unitPrice">${unitPrice.toLocaleString()}</span></p>
-      <p class="fs-4 text-success fw-semibold">
-        Total: ₦<span id="totalPrice">${(unitPrice * minQty).toLocaleString()}</span>
-      </p>
 
-      <div class="input-group mb-3 mt-4" style="max-width: 160px;">
-        <button class="btn btn-outline-secondary" type="button" id="decreaseBtn">−</button>
-        <input type="number" class="form-control text-center" id="quantityInput" value="${minQty}" min="${minQty}">
-        <button class="btn btn-outline-secondary" type="button" id="increaseBtn">+</button>
+
+    </div>
+    <div class="col-md-6 mt-3 mt-lg-0">
+      <h3>${product.name}</h3>
+      ${specificationHTML}
+      ${priceOptionsHTML}
+      <p class="price fs-4">Price: <strong>&#8358;<span id="price">${unitPrice * currentQuantity}</span></strong></p>
+      <div class="d-flex align-items-center mb-3">
+        <button class="btn variant-btn" id="decrease">-</button>
+        <input type="text" id="quantity" value="${currentQuantity}" class="form-control mx-2" style="width:60px;" readonly>
+        <button class="btn variant-btn" id="increase">+</button>
       </div>
-
-      <button class="btn btn-primary w-100 addToCart">Add to Cart</button>
+      <button class="btn btn-primary addToCart w-100" id="add-to-cart">${cartItem ? "View Cart" : "Add To Cart"}</button>
     </div>
   `;
 
-  // Event listeners
-  const qtyInput = document.getElementById("quantityInput");
-  const unitPriceDisplay = document.getElementById("unitPrice");
-  const totalPrice = document.getElementById("totalPrice");
-  const increaseBtn = document.getElementById("increaseBtn");
-  const decreaseBtn = document.getElementById("decreaseBtn");
-
-  function updateTotal() {
-    const qty = parseInt(qtyInput.value);
-    totalPrice.textContent = (qty * unitPrice).toLocaleString();
-    unitPriceDisplay.textContent = unitPrice.toLocaleString();
-  }
-
-  increaseBtn.addEventListener("click", () => {
-    qtyInput.value = parseInt(qtyInput.value) + 1;
-    updateTotal();
-  });
+  const decreaseBtn = document.getElementById("decrease");
+  const increaseBtn = document.getElementById("increase");
+  const quantityInput = document.getElementById("quantity");
+  const priceDisplay = document.getElementById("price");
+  const addToCartBtn = document.getElementById("add-to-cart");
 
   decreaseBtn.addEventListener("click", () => {
-    if (parseInt(qtyInput.value) > minQty) {
-      qtyInput.value = parseInt(qtyInput.value) - 1;
-      updateTotal();
+    const minOrder = product.minOrder || 1;
+    if (currentQuantity > minOrder) {
+      currentQuantity--;
+      quantityInput.value = currentQuantity;
+      priceDisplay.textContent = currentQuantity * unitPrice;
+      updateProductInCart();
     }
   });
 
-  qtyInput.addEventListener("input", () => {
-    if (qtyInput.value < minQty) qtyInput.value = minQty;
-    updateTotal();
+  increaseBtn.addEventListener("click", () => {
+    currentQuantity++;
+    quantityInput.value = currentQuantity;
+    priceDisplay.textContent = currentQuantity * unitPrice;
+    updateProductInCart();
   });
 
-  // Handle variant selection
-  if (hasVariants) {
-    const variantButtons = document.querySelectorAll(".variant-btn");
-    variantButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        variantButtons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
-
-        const newVariant = button.getAttribute("data-size");
-        selectedVariant = newVariant;
-        unitPrice = product.prices[newVariant];
-        updateTotal();
+  if (product.priceOptions) {
+    document.querySelectorAll(".memory-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".memory-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        unitPrice = parseInt(btn.dataset.price);
+        priceDisplay.textContent = unitPrice * currentQuantity;
+        updateProductInCart();
       });
     });
   }
 
-} else {
-  container.innerHTML = `
-    <div class="col-12 text-center">
-      <p class="text-danger">Product not found.</p>
-    </div>
-  `;
-}
+  addToCartBtn.addEventListener("click", () => {
+    if (addToCartBtn.textContent === "View Cart") {
+      window.location.href = "cart.html";
+      return;
+    }
+
+    const newCart = cart.filter(item => item.id !== product.id);
+    newCart.push({
+      id: product.id,
+      name: product.name,
+      price: unitPrice,
+      quantity: currentQuantity
+    });
+
+    localStorage.setItem("gategps-cart", JSON.stringify(newCart));
+    updateCartCount();
+
+    addToCartBtn.textContent = "View Cart";
+    addToCartBtn.classList.remove("btn-primary");
+    addToCartBtn.classList.add("btn-success");
+  });
+
+  // ✅ Live cart updater for + / - buttons
+  function updateProductInCart() {
+    const cart = JSON.parse(localStorage.getItem("gategps-cart")) || [];
+    const existingItem = cart.find(item => item.id === product.id);
+
+    const newItem = {
+      id: product.id,
+      name: product.name,
+      price: unitPrice,
+      quantity: currentQuantity
+    };
+
+    let updatedCart;
+    if (existingItem) {
+      updatedCart = cart.map(item =>
+        item.id === product.id ? newItem : item
+      );
+    } else {
+      updatedCart = [...cart, newItem];
+    }
+
+    localStorage.setItem("gategps-cart", JSON.stringify(updatedCart));
+    updateCartCount();
+  }
+
+  updateCartCount();
+});
