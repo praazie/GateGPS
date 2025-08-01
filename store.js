@@ -66,3 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCartCount();
 });
+
+
+
+  const tooltipTriggers = [...document.querySelectorAll('[data-bs-toggle="tooltip"]')];
+  const tooltips = tooltipTriggers.map(el => new bootstrap.Tooltip(el));

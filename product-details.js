@@ -128,7 +128,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ` : "";
 
   container.innerHTML = `
-    <div class="col-md-6 shadow py-5 d-flex align-item-center justify-content-center g-2">
+    <div class="col-md-6 shadow py-5 d-flex align-item-center justify-content-center g-2 position-relative">
+
+     ${product.minOrder && product.minOrder > 1
+      ? `<span class="moq-badge">MOQ ${product.minOrder}</span>`
+      : ""}
+
      <img src="${product.image}" class="img-fluid ${product.imageClass || ''}"  alt="${product.name}">
 
 

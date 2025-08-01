@@ -361,3 +361,18 @@ p {
 .custom-img-card {
     width: 50%;
 }
+
+
+.moq-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    /* Golden */
+    color: white;
+    font-weight: bold;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
