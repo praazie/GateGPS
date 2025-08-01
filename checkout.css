@@ -295,7 +295,8 @@ p {
 #fullName:focus,
 #email:focus,
 #address:focus,
-#phone:focus {
+#phone:focus,
+#state {
     box-shadow: none !important;
     border-color: black !important;
     outline: none !important;

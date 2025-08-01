@@ -54,11 +54,7 @@
 
 
             <div class="d-flex d-lg-none align-items-center shooping-cart position-relative">
-                <i class="fa-solid fa-cart-shopping fs-4"></i>
-                <span id="cart-count"
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    0
-                </span>
+                <i class="fa-solid fa-shop" style="color: #000000;"></i>
             </div>
 
 
@@ -142,10 +138,7 @@
                     <div class=" d-flex flex-column flex-lg-row sm-btns  gap-3 ">
 
                         <div class="d-none d-lg-flex align-items-center shooping-cart cart-lg position-relative">
-                            <i class="fa-solid fa-cart-shopping fs-5"></i>
-                            <span id="cart-counts" class="position-absolute bg-danger text-white cart-badge">
-                                0
-                            </span>
+                            <i class="fa-solid fa-shop" style="color: #000000;"></i>
                         </div>
 
                         <div class="d-flex align-items-center gap-2 ">
@@ -188,6 +181,10 @@
         <!-- Total -->
         <div class="text-end mb-4">
             <h5>Total: ₦<span id="checkout-total">0</span></h5>
+            <p>Subtotal: ₦<span id="cart-subtotal">0</span></p>
+            <p>Delivery: ₦<span id="delivery-fee">0</span></p>
+            <h4>Total: ₦<span id="final-total">0</span></h4>
+
         </div>
 
         <!-- Customer Info -->
@@ -206,13 +203,42 @@
                     <label for="phone" class="form-label">Phone Number</label>
                     <input type="tel" id="phone" class="form-control" required>
                 </div>
+
+                <div class="mb-3">
+                    <label for="state" class="form-label">Delivery State</label>
+                    <select id="state" class="form-select" required>
+                        <option value="">Select a state</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="Others">Other States</option>
+                    </select>
+                </div>
+
                 <div class="mb-3">
                     <label for="address" class="form-label">Delivery Address</label>
                     <textarea id="address" class="form-control" rows="3" required></textarea>
                 </div>
+
+
+
                 <button type="submit" class="btn btn-success w-100">Place Order</button>
             </form>
         </div>
+    </div>
+
+
+    <div id="invoice" class="d-none mt-4">
+        <div>
+            <h4 class="text-center">GateGPS Invoice</h4>
+            <p><strong>Name:</strong> <span id="inv-name"></span></p>
+            <p><strong>Email:</strong> <span id="inv-email"></span></p>
+            <p><strong>Phone:</strong> <span id="inv-phone"></span></p>
+            <p><strong>Address:</strong> <span id="inv-address"></span></p>
+            <p><strong>Delivery Fee:</strong> ₦<span id="inv-delivery"></span></p>
+            <p><strong>Cart Total:</strong> ₦<span id="inv-subtotal"></span></p>
+            <h5><strong>Total:</strong> ₦<span id="inv-total"></span></h5>
+            <button onclick="window.print()" class="btn btn-outline-primary mt-2">Print Invoice</button>
+        </div>
+
     </div>
 
 

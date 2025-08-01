@@ -42,11 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    let total = 0;
+    let subtotal = 0;
     summary.innerHTML = cart.map(item => {
         const product = products.find(p => p.id === item.id);
         const price = item.price * item.quantity;
-        total += price;
+        subtotal += price;
         return `
       <div class="d-flex gap-3 align-items-center border-bottom py-2 checkout-item">
         <img src="${product.image}" alt="${product.name}" style="width: 80px; height: auto;" class="rounded ">
@@ -60,9 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     }).join("");
 
-    totalEl.textContent = total.toLocaleString();
-
-
+    totalEl.textContent = subtotal.toLocaleString();
 
     const cartCountEls = document.querySelectorAll("#cart-count, #cart-counts");
 
@@ -74,48 +72,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCartCount();
 
-    // Form submit
+    function calculateDeliveryFee(state) {
+        switch (state) {
+            case "Lagos":
+                return 5000;
+          
+            case "Others":
+                return 7000;
+            default:
+                return 0;
+        }
+    }
+
+    document.getElementById("state").addEventListener("change", () => {
+        const state = document.getElementById("state").value;
+        const deliveryFee = calculateDeliveryFee(state);
+        const grandTotal = subtotal + deliveryFee;
+
+        document.getElementById("delivery-fee").textContent = deliveryFee.toLocaleString();
+        document.getElementById("final-total").textContent = grandTotal.toLocaleString();
+    });
+
     document.getElementById("checkout-form").addEventListener("submit", function (e) {
         e.preventDefault();
 
-        // Get values
         const fullName = document.getElementById("fullName").value.trim();
         const email = document.getElementById("email").value.trim();
         const phone = document.getElementById("phone").value.trim();
         const address = document.getElementById("address").value.trim();
+        const state = document.getElementById("state").value;
 
-        const cart = JSON.parse(localStorage.getItem("gategps-cart")) || [];
-        if (cart.length === 0) {
-            alert("Your cart is empty.");
-            return;
-        }
-
-        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        const deliveryFee = calculateDeliveryFee(state);
+        const total = subtotal + deliveryFee;
         const reference = "GATEGPS-" + Date.now();
 
-        // 🟩 Paystack payment
+        // Update Invoice
+        document.getElementById("inv-name").textContent = fullName;
+        document.getElementById("inv-email").textContent = email;
+        document.getElementById("inv-phone").textContent = phone;
+        document.getElementById("inv-address").textContent = address;
+        document.getElementById("inv-delivery").textContent = deliveryFee.toLocaleString();
+        document.getElementById("inv-subtotal").textContent = subtotal.toLocaleString();
+        document.getElementById("inv-total").textContent = total.toLocaleString();
+        document.getElementById("invoice").classList.remove("d-none");
+
+        // Paystack Integration
         const handler = PaystackPop.setup({
-            key: 'YOUR_PUBLIC_KEY_HERE', // ⬅️ Replace with your Paystack public key
+            key: 'YOUR_PUBLIC_KEY_HERE',
             email: email,
-            amount: total * 100, // in kobo
+            amount: total * 100,
             currency: "NGN",
             ref: reference,
             callback: function (response) {
                 alert("Payment successful! Reference: " + response.reference);
 
-                // 🟩 WhatsApp auto message
-                const message = `*NEW ORDER RECEIVED*
-Name: ${fullName}
-Phone: ${phone}
-Email: ${email}
-Address: ${address}
-Order:
-${cart.map(item => `• ${item.name} x${item.quantity}`).join("\n")}
-Total: ₦${total.toLocaleString()}
-Ref: ${response.reference}`;
-                window.open(`https://wa.me/YOUR_WHATSAPP_NUMBER?text=${encodeURIComponent(message)}`, "_blank");
+                // WhatsApp auto message
+                const message = `*NEW ORDER RECEIVED*\nName: ${fullName}\nPhone: ${phone}\nEmail: ${email}\nAddress: ${address}\nOrder:\n${cart.map(item => `• ${item.name} x${item.quantity}`).join("\n")}\nSubtotal: ₦${subtotal.toLocaleString()}\nDelivery: ₦${deliveryFee.toLocaleString()}\nTotal: ₦${total.toLocaleString()}\nRef: ${response.reference}`;
+                window.open(`https://wa.me/2348139964679?text=${encodeURIComponent(message)}`, "_blank");
 
-                // 🟩 Send to Formspree
+                // Formspree
                 fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -125,10 +140,10 @@ Ref: ${response.reference}`;
                         phone: phone,
                         address: address,
                         message: message
-                    }),
+                    })
                 });
 
-                // 🟩 Send to your own server (optional)
+                // Your own server
                 fetch("/submit-order", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -137,13 +152,15 @@ Ref: ${response.reference}`;
                         email,
                         phone,
                         address,
+                        state,
                         cart,
+                        subtotal,
+                        deliveryFee,
                         total,
                         reference: response.reference
-                    }),
+                    })
                 });
 
-                // 🟩 Clear cart & redirect
                 localStorage.removeItem("gategps-cart");
                 window.location.href = "thank-you.html";
             },

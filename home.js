@@ -26,12 +26,12 @@ viewMoreBtn.addEventListener('click', function () {
   }
 });
 
-const cartCountEls = document.querySelectorAll("#cart-count, #cart-counts");
+// const cartCountEls = document.querySelectorAll("#cart-count, #cart-counts");
 
-function updateCartCount() {
-  const cart = JSON.parse(localStorage.getItem("gategps-cart")) || [];
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  cartCountEls.forEach(el => el.textContent = totalItems);
-}
+// function updateCartCount() {
+//   const cart = JSON.parse(localStorage.getItem("gategps-cart")) || [];
+//   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+//   cartCountEls.forEach(el => el.textContent = totalItems);
+// }
 
-updateCartCount();
+// updateCartCount();
