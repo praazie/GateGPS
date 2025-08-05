@@ -131,7 +131,14 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="col-md-6 shadow py-5 d-flex align-item-center justify-content-center g-2 position-relative">
 
      ${product.minOrder && product.minOrder > 1
-      ? `<span class="moq-badge">MOQ ${product.minOrder}</span>`
+      ? `<span class="moq-badge" 
+                 data-bs-toggle="popover" 
+            data-bs-placement="left" 
+            data-bs-trigger="focus"
+            tabindex="0"
+            data-bs-content="Minimum Order Quantity: You must buy at least ${product.minOrder} units.">
+        MOQ ${product.minOrder}
+           </span>`
       : ""}
 
      <img src="${product.image}" class="img-fluid ${product.imageClass || ''}"  alt="${product.name}">
@@ -152,6 +159,11 @@ document.addEventListener("DOMContentLoaded", () => {
       <button class="btn btn-primary addToCart w-100" id="add-to-cart">${cartItem ? "View Cart" : "Add To Cart"}</button>
     </div>
   `;
+
+  // Activate popover on click
+  const popoverTriggers = [...document.querySelectorAll('[data-bs-toggle="popover"]')];
+  const popovers = popoverTriggers.map(el => new bootstrap.Popover(el));
+
 
   const decreaseBtn = document.getElementById("decrease");
   const increaseBtn = document.getElementById("increase");
@@ -237,3 +249,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCartCount();
 });
+
+
