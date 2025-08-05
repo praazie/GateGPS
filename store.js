@@ -69,5 +69,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  const tooltipTriggers = [...document.querySelectorAll('[data-bs-toggle="tooltip"]')];
-  const tooltips = tooltipTriggers.map(el => new bootstrap.Tooltip(el));
+const tooltipTriggers = [...document.querySelectorAll('[data-bs-toggle="tooltip"]')];
+const tooltips = tooltipTriggers.map(el => new bootstrap.Tooltip(el));

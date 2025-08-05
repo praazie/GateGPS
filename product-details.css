@@ -376,32 +376,3 @@ p {
     clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-/* Change overall popover background */
-.popover {
-    background-color: black;
-    border: none;
-    color: white;
-}
-
-/* Change popover arrow color to match background */
-.popover.bs-popover-auto[data-popper-placement^=left]>.popover-arrow::before,
-.popover.bs-popover-auto[data-popper-placement^=right]>.popover-arrow::before,
-.popover.bs-popover-auto[data-popper-placement^=top]>.popover-arrow::before,
-.popover.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::before {
-    border-color: black;
-    background-color: black;
-
-}
-
-/* Change popover text body */
-.popover-body {
-
-    border-radius: 10px;
-    color: white;
-}
-
-
-.popover .popover-arrow {
-    display: none !important;
-}

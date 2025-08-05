@@ -132,13 +132,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
      ${product.minOrder && product.minOrder > 1
       ? `<span class="moq-badge" 
-                 data-bs-toggle="popover" 
+            data-bs-toggle="tooltip" 
             data-bs-placement="left" 
-            data-bs-trigger="focus"
-            tabindex="0"
-            data-bs-content="Minimum Order Quantity: You must buy at least ${product.minOrder} units.">
+            title="Minimum Order Quantity: You must buy at least ${product.minOrder} units.">
         MOQ ${product.minOrder}
-           </span>`
+     </span>`
+
       : ""}
 
      <img src="${product.image}" class="img-fluid ${product.imageClass || ''}"  alt="${product.name}">
@@ -160,9 +159,10 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `;
 
-  // Activate popover on click
-  const popoverTriggers = [...document.querySelectorAll('[data-bs-toggle="popover"]')];
-  const popovers = popoverTriggers.map(el => new bootstrap.Popover(el));
+  const tooltipTriggers = [...document.querySelectorAll('[data-bs-toggle="tooltip"]')];
+  tooltipTriggers.forEach(el => new bootstrap.Tooltip(el));
+
+
 
 
   const decreaseBtn = document.getElementById("decrease");
