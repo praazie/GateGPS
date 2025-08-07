@@ -198,8 +198,6 @@ p {
 
 
 
-
-
 /* first section */
 
 .carousel-indicators [data-bs-target] {
@@ -640,6 +638,22 @@ p {
   width: 100%;
 
 }
+
+#map {
+  height: 600px;
+  width: 100%;
+}
+
+.sidebar {
+  max-height: 500px;
+
+}
+
+
+
+
+
+
 
 
 

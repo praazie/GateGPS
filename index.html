@@ -34,9 +34,11 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="home.css">
+
+
+
 </head>
 
 <body>
@@ -98,7 +100,7 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
 
 
-                                <span class="underline-hover ">Products</span>
+                                <span class="underline-hover ">Solutions</span>
                             </a>
                             <ul class="dropdown-menu">
 
@@ -117,8 +119,6 @@
                                 <li><a class="dropdown-item" href="#">Dashcam Device Features</a></li>
 
                                 <li><a class="dropdown-item" href="#">GPS Device Features</a></li>
-                                <li><a class="dropdown-item" href="#">White Labelling</a></li>
-                                <li><a class="dropdown-item" href="#">Custom Server</a></li>
                             </ul>
                         </li>
                         <li class="nav-item mx-2 dropdown">
@@ -159,6 +159,12 @@
             </div>
         </div>
     </nav>
+
+    <div class="second-nav">
+        <div class="container">
+            <p>Installers Directory</p>
+        </div>
+    </div>
 
 
 
@@ -491,110 +497,24 @@
 
 
 
-    <section class="container py-5">
-        <h2 class="text-center mb-3">Certified Installers Near You</h2>
-        <p class="text-center text-muted mb-3">Find trusted professionals to help you install your GateGPS or Dashcam
-            device with confidence.</p>
 
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            <!-- Installer Card 1 -->
-            <div class="col">
-                <div class="card shadow  h-100 border-0 py-3 px-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Mechatronics Pro</h5>
-                        <p class="card-text mb-2"><i class="bi bi-geo-alt-fill text-primary me-1"></i> Lagos, Nigeria
-                        </p>
-                        <p class="card-text mb-2"><i class="bi bi-tools text-success me-1"></i> GPS & Dashcam
-                            Installation
-                        </p>
-                        <p class="card-text mb-3"><i class="bi bi-telephone-fill  me-1"></i> +234 803 987 6543
-                        </p>
-                        <a href="tel:+2348039876543"><button class="install-btn">Call Now</button></a>
-                    </div>
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-12 col-lg-8  order-2 order-lg-1 ">
+                <div id="map" class="rounded-5 shadow"></div>
+            </div>
+            <div class="col-12 col-lg-4 order-1 order-lg-2">
+                <h2>Find Installers by State</h2>
+                <div class="search-box">
+                    <input type="text" id="stateSearch" class="form-control shadow-none border-0 bg-body-secondary"
+                        placeholder="Search for a state (e.g. Lagos)" />
                 </div>
+
+                <div id="installer-details" class="mb-3"></div>
             </div>
 
-            <!-- Installer Card 2 -->
-            <div class="col">
-                <div class="card shadow  h-100 border-0 py-3 px-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Mechatronics Pro</h5>
-                        <p class="card-text mb-2"><i class="bi bi-geo-alt-fill text-primary me-1"></i> Abuja, Nigeria
-                        </p>
-                        <p class="card-text mb-2"><i class="bi bi-tools text-success me-1"></i> GPS & Dashcam
-                            Installation
-                        </p>
-                        <p class="card-text mb-3"><i class="bi bi-telephone-fill  me-1"></i> +234 803 987 6543
-                        </p>
-                        <a href="tel:+2348039876543"><button class="install-btn">Call Now</button></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Installer Card 3 -->
-            <div class="col">
-                <div class="card shadow  h-100 border-0 py-3 px-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Zero bound</h5>
-                        <p class="card-text mb-2"><i class="bi bi-geo-alt-fill text-primary me-1"></i> Portharcourt,
-                            Nigeria
-                        </p>
-                        <p class="card-text mb-2"><i class="bi bi-tools text-success me-1"></i> GPS & Dashcam
-                            Installation
-                        </p>
-                        <p class="card-text mb-3"><i class="bi bi-telephone-fill  me-1"></i> +234 803 987 6543
-                        </p>
-                        <a href="tel:+2348039876543"><button class="install-btn">Call Now</button></a>
-                    </div>
-                </div>
-            </div>
         </div>
-
-        <!-- Hidden Installers -->
-
-        <!-- Hidden Installers -->
-
-
-
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3 d-none" id="moreInstallers">
-            <div class="col">
-                <div class="card shadow  h-100 border-0 py-3 px-3">
-                    <div class="card-body">
-                        <h5 class="card-title">SpeedTech Auto</h5>
-                        <p class="card-text mb-2"><i class="bi bi-geo-alt-fill text-primary me-1"></i> Enugu, Nigeria
-                        </p>
-                        <p class="card-text mb-2"><i class="bi bi-tools text-success me-1"></i> GPS & Dashcam
-                            Installation</p>
-                        <p class="card-text mb-3"><i class="bi bi-telephone-fill me-1"></i> +234 802 456 7890</p>
-                        <a href="tel:+2348024567890"><button class="install-btn">Call Now</button></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow  h-100 border-0 py-3 px-3">
-                    <div class="card-body">
-                        <h5 class="card-title">FixTech Pros</h5>
-                        <p class="card-text mb-2"><i class="bi bi-geo-alt-fill text-primary me-1"></i> Ibadan, Nigeria
-                        </p>
-                        <p class="card-text mb-2"><i class="bi bi-tools text-success me-1"></i> GPS & Dashcam
-                            Installation</p>
-                        <p class="card-text mb-3"><i class="bi bi-telephone-fill me-1"></i> +234 809 123 4567</p>
-                        <a href="tel:+2348091234567"><button class="install-btn">Call Now</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <p class="text-center mt-3 fs-5 view-more-btn"
-            style="color: #00A991; text-decoration: underline; cursor: pointer;">
-            View More
-        </p>
-    </section>
-
-
-
-
+    </div>
 
 
     <!-- footer -->
@@ -718,7 +638,7 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
 
-
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="home.js"></script>
 </body>
 
