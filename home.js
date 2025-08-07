@@ -36,7 +36,7 @@ function showInstallers(stateName) {
   const stateInstallers = installers.filter(installer => installer.state.toLowerCase() === stateName.toLowerCase());
 
   const container = document.getElementById('installer-details');
-  container.innerHTML = `<h5>${stateName} Installers</h5>`;
+  container.innerHTML = `<h5 class="mt-2">${stateName} Installers</h5>`;
 
   if (stateInstallers.length === 0) {
     container.innerHTML += `<p>No installers found for this state.</p>`;
@@ -58,7 +58,11 @@ function showInstallers(stateName) {
 
     const marker = L.marker([installer.lat, installer.lng])
       .addTo(map)
-      .bindPopup(`<strong>${installer.name}</strong><br>Phone: ${installer.phone}`);
+    marker.bindPopup(`
+  <strong>${installer.name}</strong><br>
+<a href="tel:${installer.phone}">${installer.phone}</a>
+`);
+
 
     markers.push(marker);
   });
