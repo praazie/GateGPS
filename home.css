@@ -639,10 +639,54 @@ p {
 
 }
 
-#map {
-  height: 600px;
+
+
+/* SVG map styling */
+.svg-map svg {
   width: 100%;
+  height: auto;
 }
+
+.svg-map path {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 0.5;
+  cursor: pointer;
+  transition: fill 0.2s ease-in-out;
+}
+
+.svg-map path:hover {
+
+  fill: #00AA88;
+}
+
+.svg-map path.active {
+  fill: #023e32;
+}
+
+
+
+#installer-details li {
+  margin-bottom: 6px;
+}
+
+.state-label {
+  font-size: 20px;
+  fill: black; /* text color */
+  pointer-events: none; /* so it doesn't block hover on the state path */
+}
+.state-label.hover {
+  font-size: 20px;
+  fill: white; /* text color */
+  pointer-events: none; /* so it doesn't block hover on the state path */
+}
+
+
+.green-header{
+  background-color: #00AA88;
+  color: white;
+}
+
 
 
 /* footer */
