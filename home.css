@@ -672,17 +672,22 @@ p {
 
 .state-label {
   font-size: 20px;
-  fill: black; /* text color */
-  pointer-events: none; /* so it doesn't block hover on the state path */
+  fill: black;
+  /* text color */
+  pointer-events: none;
+  /* so it doesn't block hover on the state path */
 }
+
 .state-label.hover {
   font-size: 20px;
-  fill: white; /* text color */
-  pointer-events: none; /* so it doesn't block hover on the state path */
+  fill: white;
+  /* text color */
+  pointer-events: none;
+  /* so it doesn't block hover on the state path */
 }
 
 
-.green-header{
+.green-header {
   background-color: #00AA88;
   color: white;
 }
