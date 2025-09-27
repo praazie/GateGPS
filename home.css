@@ -5,6 +5,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   overflow-x: hidden;
+ 
 }
 
 
@@ -647,9 +648,13 @@ p {
   height: auto;
 }
 
+
+
+
+
 .svg-map path {
-  fill: #ffffff;
-  stroke: #000000;
+  fill: #00A991;
+  stroke: white;
   stroke-width: 0.5;
   cursor: pointer;
   transition: fill 0.2s ease-in-out;
@@ -672,7 +677,7 @@ p {
 
 .state-label {
   font-size: 20px;
-  fill: black;
+  fill: white;
   /* text color */
   pointer-events: none;
   /* so it doesn't block hover on the state path */
