@@ -10,36 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const products = [
-        {
-            id: 1,
-            name: "GateGPS Tracker Device (GG402)", price: 24000,
-            image: "asset/GateGPS-Tracker-DualCommand-mic.png"
-        },
-        {
-            id: 2,
-            name: "GateGPS Tracker Device (GG401)", price: 22000,
-            image: "asset/GateGPS-Tracker-DualCommand-NonMic.png"
-        },
-        {
-            id: 3,
-            name: "GateGPS Tracker Relay", price: 2500,
-            image: "/asset/mini-relay-gps.png"
-        },
-        {
-            id: 4,
-            name: "GateGPS Dashcam (GC01)", price: 130000,
-            image: "asset/H94bf2b7a629d43faba8099988f8708abo2.png"
-        },
-        {
-            id: 5,
-            name: "GateGPS Dashcam (GC02)", price: 120000,
-            image: "asset/Dashcam402.png"
-        },
-        {
-            id: 6,
-            name: "GateGPS Memory Card",
-            image: "asset/GateGps-Dashcam-MemoryCard.png"
-        }
+        { id: 1, name: "GateGPS Tracker Device (GG402)", price: 24000, image: "asset/GateGPS-Tracker-DualCommand-mic.png" },
+        { id: 2, name: "GateGPS Tracker Device (GG401)", price: 22000, image: "asset/GateGPS-Tracker-DualCommand-NonMic.png" },
+        { id: 3, name: "GateGPS Tracker Relay", price: 2500, image: "asset/mini-relay-gps.png" },
+        { id: 4, name: "GateGPS Dashcam (GC01)", price: 130000, image: "asset/H94bf2b7a629d43faba8099988f8708abo2.png" },
+        { id: 5, name: "GateGPS Dashcam (GC02)", price: 120000, image: "asset/Dashcam402.png" },
+        { id: 6, name: "GateGPS Memory Card", image: "asset/GateGps-Dashcam-MemoryCard.png" }
     ];
 
     let subtotal = 0;
@@ -48,39 +24,31 @@ document.addEventListener("DOMContentLoaded", () => {
         const price = item.price * item.quantity;
         subtotal += price;
         return `
-      <div class="d-flex gap-3 align-items-center border-bottom py-2 checkout-item">
-        <img src="${product.image}" alt="${product.name}" style="width: 80px; height: auto;" class="rounded ">
-
-        <div>
-          <h6 class="mb-0">${product.name}</h6>
-          <p class="mb-0 small text-muted">Qty: ${item.quantity} × ₦${item.price.toLocaleString()}</p>
-          <strong>₦${price.toLocaleString()}</strong>
-        </div>
-      </div>
-    `;
+            <div class="d-flex gap-3 align-items-center border-bottom py-2 checkout-item">
+                <img src="${product.image}" alt="${product.name}" style="width: 80px;" class="rounded">
+                <div>
+                    <h6 class="mb-0">${product.name}</h6>
+                    <p class="mb-0 small text-muted">Qty: ${item.quantity} × ₦${item.price.toLocaleString()}</p>
+                    <strong>₦${price.toLocaleString()}</strong>
+                </div>
+            </div>
+        `;
     }).join("");
 
     totalEl.textContent = subtotal.toLocaleString();
 
-    const cartCountEls = document.querySelectorAll("#cart-count, #cart-counts");
-
     function updateCartCount() {
         const cart = JSON.parse(localStorage.getItem("gategps-cart")) || [];
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        cartCountEls.forEach(el => el.textContent = totalItems);
+        document.querySelectorAll("#cart-count, #cart-counts").forEach(el => el.textContent = totalItems);
     }
-
     updateCartCount();
 
     function calculateDeliveryFee(state) {
         switch (state) {
-            case "Lagos":
-                return 5000;
-          
-            case "Others":
-                return 7000;
-            default:
-                return 0;
+            case "Lagos": return 5000;
+            case "Others": return 7000;
+            default: return 0;
         }
     }
 
@@ -106,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const total = subtotal + deliveryFee;
         const reference = "GATEGPS-" + Date.now();
 
-        // Update Invoice
+        // ✅ Update Invoice
         document.getElementById("inv-name").textContent = fullName;
         document.getElementById("inv-email").textContent = email;
         document.getElementById("inv-phone").textContent = phone;
@@ -116,59 +84,72 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("inv-total").textContent = total.toLocaleString();
         document.getElementById("invoice").classList.remove("d-none");
 
-        // Paystack Integration
-        const handler = PaystackPop.setup({
-            key: 'YOUR_PUBLIC_KEY_HERE',
-            email: email,
-            amount: total * 100,
-            currency: "NGN",
-            ref: reference,
-            callback: function (response) {
-                alert("Payment successful! Reference: " + response.reference);
+        // ✅ Detect platform
+        const waBase = /Android|iPhone/i.test(navigator.userAgent)
+            ? "https://wa.me/"
+            : "https://web.whatsapp.com/send?phone=";
 
-                // WhatsApp auto message
-                const message = `*NEW ORDER RECEIVED*\nName: ${fullName}\nPhone: ${phone}\nEmail: ${email}\nAddress: ${address}\nOrder:\n${cart.map(item => `• ${item.name} x${item.quantity}`).join("\n")}\nSubtotal: ₦${subtotal.toLocaleString()}\nDelivery: ₦${deliveryFee.toLocaleString()}\nTotal: ₦${total.toLocaleString()}\nRef: ${response.reference}`;
-                window.open(`https://wa.me/2348139964679?text=${encodeURIComponent(message)}`, "_blank");
+        // ✅ WhatsApp message for Owner
+        const ownerMessage = `🚨 NEW ORDER RECEIVED 🚨
+Status: Payment Pending ❌
 
-                // Formspree
-                fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        name: fullName,
-                        email: email,
-                        phone: phone,
-                        address: address,
-                        message: message
-                    })
-                });
+👤 Name: ${fullName}
+📞 Phone: ${phone}
+📧 Email: ${email}
+🏠 Address: ${address}
 
-                // Your own server
-                fetch("/submit-order", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        name: fullName,
-                        email,
-                        phone,
-                        address,
-                        state,
-                        cart,
-                        subtotal,
-                        deliveryFee,
-                        total,
-                        reference: response.reference
-                    })
-                });
+🛒 Items Ordered:
+${cart.map(item => `• ${item.name} x${item.quantity}`).join("\n")}
 
+💵 Subtotal: ₦${subtotal.toLocaleString()}
+🚚 Delivery: ₦${deliveryFee.toLocaleString()}
+💳 Total: ₦${total.toLocaleString()}
+
+Ref: ${reference}
+⚠️ Awaiting payment confirmation.`;
+
+        const customerMessage = `✅ Thank you for your order with GateGPS!
+
+Your Order Ref: ${reference}
+
+🛒 Items Ordered:
+${cart.map(item => `• ${item.name} x${item.quantity}`).join("\n")}
+
+💵 Total: ₦${total.toLocaleString()} (including delivery)
+
+🏦 Please make your payment to:
+Bank: GTBank
+Account Name: NNAEMEKA PRAISE
+Account Number: 0617164352
+
+⚠️ Your order will not be shipped until we receive your payment.`;
+
+        // ✅ Show modal
+        document.getElementById("amountToPay").textContent = total.toLocaleString();
+        document.getElementById("paymentRef").textContent = reference;
+        document.getElementById("paymentModal").style.display = "flex";
+
+        // ✅ Copy account number
+        document.getElementById("copyAccountBtn").onclick = () => {
+            const accNum = document.getElementById("accountNumber").textContent;
+            navigator.clipboard.writeText(accNum);
+            alert("Account number copied!");
+        };
+
+        // ✅ Continue to WhatsApp
+        document.getElementById("continueWhatsApp").onclick = () => {
+            const ownerURL = `${waBase}2348139964679&text=${encodeURIComponent(ownerMessage)}`;
+            window.location.href = ownerURL;
+
+            setTimeout(() => {
+                const customerURL = `${waBase}${phone}&text=${encodeURIComponent(customerMessage)}`;
+                window.location.href = customerURL;
+            }, 2500);
+
+            setTimeout(() => {
                 localStorage.removeItem("gategps-cart");
                 window.location.href = "thank-you.html";
-            },
-            onClose: function () {
-                alert("Transaction was not completed, window closed.");
-            }
-        });
-
-        handler.openIframe();
+            }, 4500);
+        };
     });
 });

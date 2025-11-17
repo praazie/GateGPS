@@ -43,327 +43,362 @@
 
 
 
+<body>
+    <!-- navbar -->
+    <nav class="navbar bg-white  navbar-expand-lg px-2  fixed-top shadow align-items-center my-my ">
+        <div class="container d-flex align-items-center justify-content-between py-lg-1 py-1 ">
+            <a class="navbar-brand p-0" href="index.html">
+                <img src="GateGPS_Logos (2)/GateGPS_Logos/gg1.png" alt="Logo" width="50" height="50"
+                    class=" d-sm-inline-block d-none   img-fluid">
 
-<!-- navbar -->
-<nav class="navbar bg-white  navbar-expand-lg px-2  fixed-top shadow align-items-center my-my ">
-    <div class="container d-flex align-items-center justify-content-between py-lg-1 py-1 ">
-        <a class="navbar-brand p-0" href="index.html">
-            <img src="GateGPS_Logos (2)/GateGPS_Logos/gg1.png" alt="Logo" width="50" height="50"
-                class=" d-sm-inline-block d-none   img-fluid">
-
-            <img src="GateGPS_Logos (2)/GateGPS_Logos/gg1.png" alt="Logo" width="40" height="40"
-                class=" d-sm-none d-inline-block  img-fluid">
-        </a>
+                <img src="GateGPS_Logos (2)/GateGPS_Logos/gg1.png" alt="Logo" width="40" height="40"
+                    class=" d-sm-none d-inline-block  img-fluid">
+            </a>
 
 
 
-        <div class="d-flex d-lg-none align-items-center shooping-cart position-relative">
-            <a href="store.html" class="text-dark ">
-                <i class="fa-solid fa-store" style="color: #000000;"></i>
+            <div class="d-flex d-lg-none align-items-center shooping-cart position-relative">
+                <a href="store.html" class="text-dark ">
+                    <i class="fa-solid fa-store" style="color: #000000;"></i>
+                </a>
+            </div>
+
+
+
+
+
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <i class="bi bi-list navIcon"></i>
+            </button>
+
+
+
+            <!-- sidebar -->
+            <div class=" sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+
+
+                <!-- sidebar header -->
+                <div class="offcanvas-header shadow  d-flex d-lg-none justify-content-between ">
+                    <img src="GateGPS_Logos (2)/GateGPS_Logos/gg1.png " class="img-fluid mx-2 " alt="Logo" width="35"
+                        height="35">
+
+                    <button type="button" class=" close-btnn  " data-bs-dismiss="offcanvas" aria-label="Close"> <i
+                            class="fa-solid fa-xmark fs-1"></i> </button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav  justify-content-center  d-flex align-content-center flex-grow-1">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-black   underline-hover" aria-current="page"
+                                href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item  mx-2">
+                            <a class="nav-link  text-black   underline-hover" href="">About</a>
+                        </li>
+
+                        <li class="nav-item  mx-2 dropdown">
+                            <a class="nav-link   text-black  dropdown-toggle " href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+
+
+                                <span class="underline-hover ">Solutions</span>
+                            </a>
+                            <ul class="dropdown-menu">
+
+                                <li><a class="dropdown-item" href="whitelabelling.html">White Labelling</a></li>
+
+                                <li><a class="dropdown-item" href="custom server.html">Custom Server</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mx-2 dropdown">
+                            <a class="nav-link text-black dropdown-toggle " href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+
+                                <span class="underline-hover">Features</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="dashcam.html">Dashcam Device Features</a></li>
+
+                                <li><a class="dropdown-item" href="GateGPS device.html">GPS Device Features</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mx-2 dropdown">
+                            <a class="nav-link text-black dropdown-toggle " href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+
+                                <span class="underline-hover">Manual</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Dashcam Device Manual</a></li>
+
+                                <li><a class="dropdown-item" href="GateGps manual/GataGPS manual.pdf"
+                                        download="GateGPS-Manual.pdf">GPS Device Manual</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class=" d-flex flex-column flex-lg-row sm-btns  gap-3 ">
+
+                        <div class="d-none d-lg-flex align-items-center shooping-cart cart-lg position-relative pe-2">
+                            <a href="store.html" class="text-dark ">
+                                <i class="fa-solid fa-store" style="color: #000000;"></i>
+                            </a>
+                        </div>
+
+
+                        <div class="d-flex align-items-center gap-2 gap-lg-0">
+
+                            <button class="ctn con">Contact us</button>
+                            <a href="tel:08139964679" class="whatsapp-link">
+                                <span class="">
+                                    <i class="bi bi-telephone-fill fs-3 color-change d-inline d-lg-none"></i>
+                                </span>
+                            </a>
+
+
+                            <a href="https://wa.me/2348139964679" class="whatsapp-link">
+                                <span class="shape">
+                                    <i class="bi bi-whatsapp fs-3 color-change c-c d-inline d-lg-none"></i>
+                                </span>
+                            </a>
+                        </div>
+
+                        <button class="ctn">Server Login</button>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- First section -->
+
+
+
+
+    <div class="container margin-up py-5 rounded-5 d-flex flex-column align-items-center">
+        <h3 class="text-lg-center ps-3">Launch your own GPS brand with our GataGPS</h3>
+        <p class="text-lg-center ps-3">Rebrand and resell our technology under your brand</p>
+        <div class="d-flex justify-content-center mt-3">
+            <img src="Asset/white label img.png" alt="whitelabelling image" class="img-fluid " height="300" width="300">
+
+
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <a href="https://wa.me/2348139964679?text=Hello%2C%20I%27m%20interested%20in%20White%20Labelling%20services"
+                target="_blank">
+                <button class="hero-btn">Request Now</button>
             </a>
         </div>
 
 
+    </div>
+
+    <!-- Second section -->
+
+    <div class="container mt-5 py-3">
+        <div class="row px-3 py-3">
+            <div class="col-12 col-lg-6 align-content-center ">
+                <h2>What White-Labelling is about</h2>
+                <P>White labelling allows you to offer powerful technology under your own brand, without the stress of
+                    building from scratch. With Gate<span style="color: #00AA88;">GPS</span>, you can seamlessly present
+                    our
+                    proven solutions as your own, giving
+                    your business a competitive edge while saving time and resources.
+                </P>
 
 
-
-        <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <i class="bi bi-list navIcon"></i>
-        </button>
+                <a href="custom server.html">
+                    <button class="hero-btn mt-2">Explore Custom server</button>
+                </a>
 
 
-
-        <!-- sidebar -->
-        <div class=" sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel">
-
-
-            <!-- sidebar header -->
-            <div class="offcanvas-header shadow  d-flex d-lg-none justify-content-between ">
-                <img src="GateGPS_Logos (2)/GateGPS_Logos/gg1.png " class="img-fluid mx-2 " alt="Logo" width="35"
-                    height="35">
-
-                <button type="button" class=" close-btnn  " data-bs-dismiss="offcanvas" aria-label="Close"> <i
-                        class="fa-solid fa-xmark fs-1"></i> </button>
             </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav  justify-content-center  d-flex align-content-center flex-grow-1">
-                    <li class="nav-item mx-2">
-                        <a class="nav-link text-black   underline-hover" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item  mx-2">
-                        <a class="nav-link  text-black   underline-hover" href="#">About</a>
-                    </li>
-
-                    <li class="nav-item  mx-2 dropdown">
-                        <a class="nav-link   text-black  dropdown-toggle " href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-
-
-                            <span class="underline-hover ">Solutions</span>
-                        </a>
-                        <ul class="dropdown-menu">
-
-                            <li><a class="dropdown-item" href="#">White Labelling</a></li>
-
-                            <li><a class="dropdown-item" href="#">Custom Server</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item mx-2 dropdown">
-                        <a class="nav-link text-black dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-
-                            <span class="underline-hover">Features</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Dashcam Device Features</a></li>
-
-                            <li><a class="dropdown-item" href="#">GPS Device Features</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item mx-2 dropdown">
-                        <a class="nav-link text-black dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-
-                            <span class="underline-hover">Manual</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Dashcam Device Manual</a></li>
-
-                            <li><a class="dropdown-item" href="GateGps manual/GataGPS manual.pdf"
-                                    download="GateGPS-Manual.pdf">GPS Device Manual</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class=" d-flex flex-column flex-lg-row sm-btns  gap-3 ">
-
-                    <div class="d-none d-lg-flex align-items-center shooping-cart cart-lg position-relative pe-2">
-                        <a href="store.html" class="text-dark ">
-                            <i class="fa-solid fa-store" style="color: #000000;"></i>
-                        </a>
+            <div class="col-12 col-lg-6 text-center mt-5">
+                <!-- Top row with 3 items -->
+                <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap mt-0 mt-lg-3">
+                    <div>
+                        <img src="Asset/whitelabell brand.png" class="img-fluid top-img" alt="">
+                        <p>Your brand</p>
                     </div>
 
-
-                    <div class="d-flex align-items-center gap-2 gap-lg-0">
-                        <button class="ctn con  ">Contact us</button> <span class="shape"><i
-                                class="bi bi-telephone-fill fs-3 color-change  d-inline  d-lg-none"></i></span>
-                        <span class="shape"><i
-                                class="bi bi-whatsapp fs-3 color-change c-c d-inline d-lg-none "></i></span>
+                    <div>
+                        <img src="Asset/dotted arrow.png" class="img-fluid arrow-img" alt="">
                     </div>
-                    <button class="ctn">Server Login</button>
+
+                    <div>
+                        <img src="GateGPS_Logos (2)/GateGPS_Logos/gg1.png" class="img-fluid top-img" alt="">
+                        <p class="mt-2">Our technology</p>
+                    </div>
+                </div>
+
+                <!-- Centered bottom item -->
+                <div class="mt-4">
+                    <img src="Asset/—Pngtree—vector leader of group icon_4022100.png"
+                        class="img-fluid mx-auto d-block customer-img" alt="" width="200">
+                    <p class="mt-2">Your Customers</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- third section -->
+    <div class="text-center mt-3 container py-5">
+        <h3 class="py-3">Features & Benfits</h3>
+        <div class="row mt-3 gy-4 py-4 gy-md-0">
+            <div class="col-6 col-md-3 fst-1">
+                <img src="Asset/Change Circle Fill Streamline Outlined Fill - Material Symbols.svg" alt=""
+                    class="img-fluid pb-2" width="50" height="50">
+                <strong>
+                    <h6 class="my-0">Rebrand easily</h6>
+                </strong>
+                <p class="pt-2">Put your logos and colors on device <br> dashbord and app</p>
+            </div>
+
+            <div class="col-6 col-md-3 fst-2">
+                <img src="Asset/Rocket Streamline Solar Bold.svg" alt="" class="img-fluid pb-2" width="50" height="50">
+                <strong>
+                    <h6 class="my-0">Ready to markey</h6>
+                </strong>
+                <p class="pt-2">Avoids the need to create everything entirely from scratch.</p>
+            </div>
+
+            <div class="col-6 col-md-3 fst-3">
+                <img src="Asset/Box 1 Fill Streamline Remix Fill.svg" alt="" class="img-fluid pb-2" width="50"
+                    height="50">
+                <strong>
+                    <h6 class="my-0">Scalable</h6>
+                </strong>
+                <p class="pt-2">Begin small and develop steadily <br> into something larger</p>
+            </div>
+
+            <div class="col-6 col-md-3 fst-4">
+                <img src="Asset/Customer Support 1 Streamline Core Solid - Free.svg" alt="" class="img-fluid pb-2"
+                    width="40" height="40">
+                <strong>
+                    <h6 class="my-0">Support</h6>
+                </strong>
+                <p class="pt-2">All backend tasks are handled <br> efficiently by us</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer -->
+    <footer class="pt-0 pt-lg-5 pb-2 px-2">
+        <div class=" foot-line pt-5 pb-lg-5 pb-2 container ">
+            <div class="row d-flex justify-content-between align-content-center pt-5 ">
+                <div class="col-lg-2 col-md-6 col-sm-6">
+
+                    <img class="img-fluid  pb-3" src="GateGPS_Logos (2)/GateGPS_Logos/gg1.png" alt="footer logo"
+                        width="130" height="130">
+
+
 
 
                 </div>
 
-            </div>
-        </div>
-    </div>
-</nav>
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <p>
+                        GateGPS manufactures GPS trackers and dashcams with free lifetime cloud hosting and white-label
+                        apps.
+                        Whether you’re a vehicle owner, fleet manager, or reseller, enjoy secure, scalable tech no
+                        subscriptions and full control.
+                    </p>
 
 
-<!-- First section -->
-
-<div class="container margin-up py-5 rounded-5 d-flex flex-column align-items-center">
-    <h3 class="text-lg-center ps-3">Launch your own GPS brand with our GataGPS</h3>
-    <p class="text-lg-center ps-3">Rebrand and resell our technology under your brand</p>
-    <div class="d-flex justify-content-center mt-3">
-        <img src="Asset/white label img.png" alt="whitelabelling image" class="img-fluid " height="300" width="300">
-
-
-    </div>
-    <div class="d-flex justify-content-center mt-3">
-        <button class="hero-btn">Request a demo</button>
-    </div>
-
-</div>
-
-<!-- Second section -->
-
-<div class="container mt-5">
-    <div class="row px-3">
-        <div class="col-12 col-lg-6 ">
-            <h2>What White-Labelling is about</h2>
-            <P>White labelling lets you sell our technology as your own brand. GateGPS provides the software, and
-                support needed for this service</P>
-            <div class="d-flex justify-content-center">
-                <img src="Asset/gateGpswhitelabellMapImg.png" class="img-fluid rotated-image mt-3" alt="" width="400">
-            </div>
-        </div>
-        <div class="col-12 col-lg-6 text-center">
-            <!-- Top row with 3 items -->
-            <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap mt-3">
-                <div>
-                    <img src="Asset/whitelabell brand.png" class="img-fluid top-img" alt="">
-                    <p>Your brand</p>
                 </div>
 
-                <div>
-                    <img src="Asset/dotted arrow.png" class="img-fluid arrow-img" alt="">
+                <div class="col-lg-2 col-md-12 col-sm-12 mt-3 mt-lg-0 ">
+                    <h5 class="">Troubleshoot</h5>
+                    <ul class="list-unstyled">
+                        <li class="py-1">
+                            <a href="">Dashcam Troubleshoot</a>
+                        </li>
+                        <li class="py-1">
+                            <a href="">GPS Device Troubleshoot</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-lg-2 col-md-6   ">
+                    <h5 class="">Solutions</h5>
+                    <ul class="list-unstyled">
+                        <li class="py-1">
+                            <a href="store.html">Gatecam Sales</a>
+                        </li>
+                        <li class="py-1">
+                            <a href="store.html">GPS Device Sales</a>
+                        </li>
+
+                        <li class="py-1">
+                            <a href="whitelabelling.html">White-Labelling</a>
+                        </li>
+                        <li class="py-1">
+                            <a href="custom server.html">Custom Server</a>
+                        </li>
+
+                    </ul>
                 </div>
 
-                <div>
-                    <img src="GateGPS_Logos (2)/GateGPS_Logos/gg1.png" class="img-fluid top-img" alt="">
-                    <p class="mt-2">Our technology</p>
+                <div class="col-lg-2 col-md-6 col-sm-6 ">
+                    <h5 class="">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="nav-item dropdown">
+                            <a class=" text-black dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+
+                                <span class="underline-hover">Manual</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Dashcam Device Manual</a></li>
+
+                                <li><a class="dropdown-item" href="GateGps manual/GataGPS manual.pdf"
+                                        download="GateGPS-Manual.pdf">GPS Device Manual</a></li>
+                            </ul>
+                        </li>
+                        <li class="py-1">
+                            <a href="">Terms</a>
+                        </li>
+                        <li class="py-1">
+                            <a href="">Privacy Policy</a>
+                        </li>
+                        <li class="py-1">
+                            <a href="index.html">Installers Directory</a>
+                        </li>
+
+                        <li class="py-1">
+                            <a href="">Protocol Documentation</a>
+                        </li>
+
+
+                    </ul>
+
                 </div>
-            </div>
-
-            <!-- Centered bottom item -->
-            <div class="mt-4">
-                <img src="Asset/—Pngtree—vector leader of group icon_4022100.png"
-                    class="img-fluid mx-auto d-block customer-img" alt="" width="200">
-                <p class="mt-2">Your Customers</p>
-            </div>
-        </div>
-
-
-    </div>
-</div>
-
-
-<!-- third section -->
-<div class="text-center mt-3 container py-3">
-    <h3 class="py-3">Features & Benfits</h3>
-    <div class="row mt-3 gy-4 gy-md-0">
-        <div class="col-6 col-md-3 fst-1">
-            <img src="Asset/Change Circle Fill Streamline Outlined Fill - Material Symbols.svg" alt=""
-                class="img-fluid pb-2" width="50" height="50">
-            <strong>
-                <h6 class="my-0">Rebrand easily</h6>
-            </strong>
-            <p class="pt-2">Put your logos and colors on device <br> dashbord and app</p>
-        </div>
-
-        <div class="col-6 col-md-3 fst-2">
-            <img src="Asset/Rocket Streamline Solar Bold.svg" alt="" class="img-fluid pb-2" width="50" height="50">
-            <strong>
-                <h6 class="my-0">Ready to markey</h6>
-            </strong>
-            <p class="pt-2">Avoids the need to create everything entirely from scratch.</p>
-        </div>
-
-        <div class="col-6 col-md-3 fst-3">
-            <img src="Asset/Box 1 Fill Streamline Remix Fill.svg" alt="" class="img-fluid pb-2" width="50" height="50">
-            <strong>
-                <h6 class="my-0">Scalable</h6>
-            </strong>
-            <p class="pt-2">Begin small and develop steadily <br> into something larger</p>
-        </div>
-
-        <div class="col-6 col-md-3 fst-4">
-            <img src="Asset/Customer Support 1 Streamline Core Solid - Free.svg" alt="" class="img-fluid pb-2"
-                width="40" height="40">
-            <strong>
-                <h6 class="my-0">Support</h6>
-            </strong>
-            <p class="pt-2">All backend tasks are handled <br> efficiently by us</p>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- footer -->
-<footer class="pt-0 pt-lg-5 pb-2 px-2">
-    <div class=" foot-line pt-5 pb-lg-5 pb-2 container ">
-        <div class="row d-flex justify-content-between align-content-center pt-5 ">
-            <div class="col-lg-2 col-md-6 col-sm-6">
-
-                <img class="img-fluid  pb-3" src="GateGPS_Logos (2)/GateGPS_Logos/gg1.png" alt="footer logo" width="130"
-                    height="130">
-
 
 
 
             </div>
 
-            <div class="col-lg-3 col-md-12 col-sm-12">
-                <p>
-                    GateGPS manufactures GPS trackers and dashcams with free lifetime cloud hosting and white-label
-                    apps.
-                    Whether you’re a vehicle owner, fleet manager, or reseller, enjoy secure, scalable tech no
-                    subscriptions and full control.
-                </p>
 
-
-            </div>
-
-            <div class="col-lg-2 col-md-12 col-sm-12 mt-3 mt-lg-0 ">
-                <h5 class="">Troubleshoot</h5>
-                <ul class="list-unstyled">
-                    <li class="py-1">
-                        <a href="">Dashcam Troubleshoot</a>
-                    </li>
-                    <li class="py-1">
-                        <a href="">GPS Device Troubleshoot</a>
-                    </li>
-                </ul>
-
-            </div>
-            <div class="col-lg-2 col-md-6   ">
-                <h5 class="">Solutions</h5>
-                <ul class="list-unstyled">
-                    <li class="py-1">
-                        <a href="">Gatecam Sales</a>
-                    </li>
-                    <li class="py-1">
-                        <a href="">GPS Device Sales</a>
-                    </li>
-
-                    <li class="py-1">
-                        <a href="">White-Labelling</a>
-                    </li>
-                    <li class="py-1">
-                        <a href="">Custom Server</a>
-                    </li>
-
-                </ul>
-            </div>
-
-            <div class="col-lg-2 col-md-6 col-sm-6 ">
-                <h5 class="">Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li class="nav-item dropdown">
-                        <a class=" text-black dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-
-                            <span class="underline-hover">Manual</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Dashcam Device Manual</a></li>
-
-                            <li><a class="dropdown-item" href="GateGps manual/GataGPS manual.pdf"
-                                    download="GateGPS-Manual.pdf">GPS Device Manual</a></li>
-                        </ul>
-                    </li>
-                    <li class="py-1">
-                        <a href="">Terms</a>
-                    </li>
-                    <li class="py-1">
-                        <a href="">Privacy Policy</a>
-                    </li>
-                    <li class="py-1">
-                        <a href="">Installers Directory</a>
-                    </li>
-                    <li class="py-1">
-                        <a href="">Protocol Documentation</a>
-                    </li>
-
-
-                </ul>
-
-            </div>
 
 
 
@@ -372,28 +407,23 @@
 
 
 
-
-    </div>
-
-
-
-
-    <div class="container mt-3 align-items-center">
-        <p class="text-center">&copy; 2025 GateGPS - All Rights Reserved</p>
-    </div>
+        <div class="container mt-3 align-items-center">
+            <p class="text-center">&copy; 2026 GateGPS - All Rights Reserved</p>
+        </div>
 
 
-</footer>
+    </footer>
 
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-    crossorigin="anonymous"></script>
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="whitelabelling.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="whitelabelling.js"></script>
 </body>
-
-</html>

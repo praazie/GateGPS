@@ -222,13 +222,15 @@ p {
         width: 70%;
     }
 
-    .shape {
+    .whatsapp-link {
+        text-decoration: none;
         display: flex;
         justify-content: center;
         padding: 4px 10px;
         background-color: #292929;
         width: 25%;
 
+        /* prevents distortion */
     }
 
     .color-change {
@@ -300,4 +302,72 @@ p {
     box-shadow: none !important;
     border-color: black !important;
     outline: none !important;
+}
+
+
+
+
+/* <!-- ✅ Modal Styles --> */
+
+.payment-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.payment-modal-content {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px 25px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    animation: fadeIn 0.3s ease;
+}
+
+.btn-copy {
+    font-size: 12px;
+    padding: 2px 8px;
+    margin-left: 8px;
+    background: #00AA88;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-copy:hover {
+    background: #00AA88;
+}
+
+.btn-main {
+    background: #00AA88;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-main:hover {
+    background: #024E3D;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

@@ -260,6 +260,14 @@ p {
 
 
 
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+
+  
+
+}
 
 
 
@@ -296,12 +304,10 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: scale(1);
-    transition: transform 0.3s ease;
 }
 
 .hero-btn:hover {
-    transform: scale(0.9);
+
     background-color: #024e3d;
 }
 

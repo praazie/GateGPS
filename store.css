@@ -222,14 +222,20 @@ p {
         width: 70%;
     }
 
-    .shape {
+
+
+
+    .phone-link,
+    .whatsapp-link {
         display: flex;
         justify-content: center;
         padding: 4px 10px;
         background-color: #292929;
         width: 25%;
-
+        text-decoration: none;
+        /* Prevents distortion */
     }
+
 
     .color-change {
         color: white;

@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="checkout.css">
 </head>
 
-<body>
+<body class="">
 
     <!-- navbar -->
     <nav class="navbar bg-white  navbar-expand-lg px-2  fixed-top shadow align-items-center my-my ">
@@ -88,7 +88,7 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav  justify-content-center   d-flex align-content-center flex-grow-1">
                         <li class="nav-item mx-2">
-                            <a class="nav-link text-black   underline-hover" aria-current="page" href="#">Home</a>
+                            <a class="nav-link text-black   underline-hover" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item  mx-2">
                             <a class="nav-link  text-black   underline-hover" href="#">About</a>
@@ -103,21 +103,21 @@
                             </a>
                             <ul class="dropdown-menu">
 
-                                <li><a class="dropdown-item" href="#">White Labelling</a></li>
+                                <li><a class="dropdown-item" href="whitelabelling.html">White Labelling</a></li>
 
-                                <li><a class="dropdown-item" href="#">Custom Server</a></li>
+                                <li><a class="dropdown-item" href="custom server.html">Custom Server</a></li>
                             </ul>
                         </li>
                         <li class="nav-item mx-2 dropdown">
                             <a class="nav-link text-black dropdown-toggle " href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
 
-                                <span class="underline-hover">Features</span>
+                                <span class="underline-hover">Products</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Dashcam Device Features</a></li>
+                                <li><a class="dropdown-item" href="dashcam.html">Dashcam Device Features</a></li>
 
-                                <li><a class="dropdown-item" href="#">GPS Device Features</a></li>
+                                <li><a class="dropdown-item" href="GateGPS device.html">GPS Device Features</a></li>
                             </ul>
                         </li>
                         <li class="nav-item mx-2 dropdown">
@@ -146,11 +146,21 @@
                             </span>
                         </div>
 
-                        <div class="d-flex align-items-center gap-2 ">
-                            <button class="ctn con  ">Contact us</button> <span class="shape"><i
-                                    class="bi bi-telephone-fill fs-3 color-change  d-inline  d-lg-none"></i></span>
-                            <span class="shape"><i
-                                    class="bi bi-whatsapp fs-3 color-change c-c d-inline d-lg-none "></i></span>
+                        <div class="d-flex align-items-center gap-2 gap-lg-0">
+
+                            <button class="ctn con">Contact us</button>
+                            <a href="tel:08139964679" class="whatsapp-link">
+                                <span class="">
+                                    <i class="bi bi-telephone-fill fs-3 color-change d-inline d-lg-none"></i>
+                                </span>
+                            </a>
+
+
+                            <a href="https://wa.me/2348139964679" class="whatsapp-link">
+                                <span class="">
+                                    <i class="bi bi-whatsapp fs-3 color-change c-c d-inline d-lg-none"></i>
+                                </span>
+                            </a>
                         </div>
                         <button class="ctn">Server Login</button>
 
@@ -229,6 +239,26 @@
             </form>
         </div>
     </div>
+
+    <!-- ✅ Payment Modal -->
+    <div id="paymentModal" class="payment-modal">
+        <div class="payment-modal-content">
+            <h5>Bank Transfer Details</h5>
+            <p><strong>Bank:</strong> GTBank</p>
+            <p><strong>Account Name:</strong> GateGPS Nigeria Ltd</p>
+            <p><strong>Account Number:</strong> <span id="accountNumber">0123456789</span>
+                <button id="copyAccountBtn" class="btn-copy">Copy</button>
+            </p>
+            <p><strong>Amount:</strong> ₦<span id="amountToPay"></span></p>
+            <p><strong>Reference:</strong> <span id="paymentRef"></span></p>
+
+            <div class="text-center mt-3">
+                <button id="continueWhatsApp" class="btn-main">Continue to WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+
 
 
     <div id="invoice" class="d-none mt-4">

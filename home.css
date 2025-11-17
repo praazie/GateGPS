@@ -5,7 +5,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   overflow-x: hidden;
- 
+
 }
 
 
@@ -454,14 +454,19 @@ p {
   }
 
 
-  .shape {
+ 
+
+  .whatsapp-link {
+    text-decoration: none;
     display: flex;
     justify-content: center;
     padding: 4px 10px;
     background-color: #292929;
     width: 25%;
-
+    display: inline-flex;
+    /* prevents distortion */
   }
+
 
   .color-change {
     color: white;
