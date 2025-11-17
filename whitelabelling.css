@@ -189,14 +189,18 @@ p {
 
 
 
-    .shape {
+
+    .whatsapp-link {
+        text-decoration: none;
         display: flex;
         justify-content: center;
         padding: 4px 10px;
         background-color: #292929;
         width: 25%;
-
+        display: inline-flex;
+        /* prevents distortion */
     }
+
 }
 
 
@@ -261,11 +265,11 @@ p {
 
 
 h1 {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
 
-  
+
 
 }
 
@@ -349,13 +353,15 @@ h1 {
 }
 
 
-.fst-1{
+.fst-1 {
     border-right: 1px solid #01AB89;
 }
-.fst-2{
+
+.fst-2 {
     border-right: 1px solid #01AB89;
 }
-.fst-3{
+
+.fst-3 {
     border-right: 1px solid #01AB89;
 }
 
@@ -368,18 +374,13 @@ h1 {
 
 /* footer */
 .foot-line {
-  border-bottom: 1px solid #01AB89;
+    border-bottom: 1px solid #01AB89;
 }
 
 .icon {
-  color: #01AB89;
+    color: #01AB89;
 }
 
 footer {
-  background: url(Asset/black-dotted-mapa-mundi-vector\ 1.png) fixed;
+    background: url(Asset/black-dotted-mapa-mundi-vector\ 1.png) fixed;
 }
-
-
-
-
-
