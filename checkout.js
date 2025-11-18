@@ -85,10 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("invoice").classList.remove("d-none");
 
         // ✅ Detect platform
-        const waBase = /Android|iPhone/i.test(navigator.userAgent)
-            ? "https://wa.me/"
-            : "https://web.whatsapp.com/send?phone=";
-
+        const waBase = "whatsapp://send?phone=";
         // ✅ WhatsApp message for Owner
         const ownerMessage = `🚨 NEW ORDER RECEIVED 🚨
 Status: Payment Pending ❌
