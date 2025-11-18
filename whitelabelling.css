@@ -56,6 +56,16 @@ p {
 
 
 
+.offcanvas,
+.offcanvas-lg,
+.offcanvas-md,
+.offcanvas-sm,
+.offcanvas-xl,
+.offcanvas-xxl {
+  --bs-offcanvas-width: 100%;
+}
+
+
 .sidebar {
     background: transparent;
     backdrop-filter: blur(20px);

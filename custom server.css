@@ -359,6 +359,14 @@ h3 {
     height: 100vh;
 }
 
+@media(max-width:767px) {
+  .margin-up {
+    height: 70vh;
+}
+}
+
+
+
 .hero-btn {
     padding: 10px 20px;
     background-color: #00A991;
