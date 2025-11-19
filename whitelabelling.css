@@ -62,7 +62,7 @@ p {
 .offcanvas-sm,
 .offcanvas-xl,
 .offcanvas-xxl {
-  --bs-offcanvas-width: 100%;
+    --bs-offcanvas-width: 100%;
 }
 
 

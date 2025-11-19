@@ -14,11 +14,6 @@
 }
 
 
-.section-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: #0f172a;
-}
 
 .feature-card {
     background: #fff;
@@ -66,4 +61,14 @@
 .hero-btn:hover {
     background-color: #024e3d;
     color: white;
+}
+
+h1,
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+
+
+
 }

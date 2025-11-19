@@ -360,9 +360,35 @@ h3 {
 }
 
 @media(max-width:767px) {
-  .margin-up {
-    height: 70vh;
+    .margin-up {
+        max-height: 75vh;
+        margin-top: 1.5rem;
+    }
+
+
+    .move {
+        max-width: 100%;
+        margin-top: -2.9rem;
+        margin-right: 5rem;
+
+
+    }
+
+    .slide-one-btnn {
+        position: relative;
+        top: 17rem;
+        border-radius: 0.3rem;
+    }
+
+
 }
+
+.slide-one-btnn {
+    padding: clamp(0.8rem, 2vw, 10px) clamp(1.5rem, 2vw, 10px);
+    border: none;
+    color: white;
+    background-color: #00A991;
+
 }
 
 
@@ -378,13 +404,7 @@ h3 {
 }
 
 
-.move {
-    max-width: 100%;
-    margin-top: -2.2rem;
-    margin-right: 5rem;
 
-
-}
 
 
 .hero-btn:hover {

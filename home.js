@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
 // - input with id="stateSearch", element with id="selected-state" and id="installer-details"
 
 const installers = [
-  { name: "John Doe", phone: "08012345678", state: "Lagos" },
-  { name: "Praise", phone: "08123456789", state: "Lagos" },
-  { name: "Praise", phone: "08123456789", state: "Lagos" },
-  { name: "Ifeanyi Nwankwo", phone: "08099887766", state: "Enugu" },
-  { name: "Chinedu Obi", phone: "07012344321", state: "Enugu" },
-  { name: "Bola Akin", phone: "09087654321", state: "Abuja" },
-  { name: "Musa Abdullahi", phone: "08011223344", state: "Kano" },
-  { name: "Musa", phone: "08011223344", state: "Kastina" }
+  { name: "John Doe", phone: "0xxxxxxxxxxx", state: "Lagos" },
+  { name: "Praise", phone: "0xxxxxxxxxxx", state: "Lagos" },
+  { name: "Praise", phone: "0xxxxxxxxx", state: "Lagos" },
+  { name: "Ifeanyi Nwankwo", phone: "0xxxxxxxxx", state: "Enugu" },
+  { name: "Chinedu Obi", phone: "0xxxxxxxxxx", state: "Enugu" },
+  { name: "Bola Akin", phone: "0xxxxxxxxxxx", state: "Abuja" },
+  { name: "Musa Abdullahi", phone: "0xxxxxxxxx", state: "Kano" },
+  { name: "Musa", phone: "0xxxxxxxxxxx", state: "Kastina" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
