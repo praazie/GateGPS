@@ -4,7 +4,7 @@ const products = [
     name: "GateGPS Tracker Device (GG402)",
     price: 24000,
     oldPrice: 25000,
-    image: "Asset/GateGPS_Tracker_DualCommand-mic.png",
+    image: "Asset/GateGPS_Tracker_DualCommand_mic.png",
     minOrder: 5,
     imageClass: "custom-img-gg402",
     specifications: [
