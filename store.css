@@ -1,0 +1,453 @@
+body {
+
+
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    overflow-x: hidden;
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #01AB89;
+}
+
+
+
+
+.shooping-cart {
+    margin-left: 11rem;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.navIcon {
+    color: black;
+    font-size: 1.8rem;
+    padding: 0.4rem;
+    border-radius: 7px;
+}
+
+
+.ctn {
+    padding: 10px 25px;
+    color: white;
+    background-color: #00A991;
+    border: none;
+
+}
+
+.con {
+    background-color: #292929;
+}
+
+.ctn:hover {
+    color: white;
+    background-color: #024e3d;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.6s;
+    border: none;
+}
+
+
+
+.sidebar {
+    background: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+@media (min-width: 992px) {
+
+    /* lg breakpoint */
+    .text-lg-black {
+        color: black !important;
+        /* Use !important to ensure it overrides text-white */
+    }
+}
+
+@media (min-width: 576px) {
+
+    .dropdown-menu {
+        opacity: 0;
+        width: 250px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+
+
+
+
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        opacity: 1;
+        transition: all 0.6s;
+    }
+
+    .dropdown:hover .dropdown-toggle::after {
+        transform: rotate(180deg);
+        transition: all 0.6s;
+    }
+
+
+
+    .underline-hover {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+
+
+    }
+
+    .underline-hover::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background-color: #01AB89;
+        transition: width 0.3s ease;
+    }
+
+    .nav-item:hover .underline-hover::after,
+    .dropdown:hover .underline-hover::after {
+        width: 100%;
+    }
+
+
+}
+
+.nav-link {
+    padding-bottom: 0;
+    color: white;
+}
+
+
+
+.dropdown-toggle::after {
+    transition: all 0.6s;
+    /* or your base position */
+}
+
+
+
+
+
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #e5e5e5;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: none;
+    position: absolute;
+}
+
+.dropdown-item {
+    padding: 15px;
+    font-size: 12px;
+}
+
+.navbar-toggler {
+    padding: 0;
+}
+
+.close-btnn {
+    background: none;
+    border: none;
+    color: white;
+}
+
+
+
+@media(max-width:992px) {
+
+
+    .nav-link {
+        margin-top: 15px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+
+        font-size: 1.2rem;
+    }
+
+
+    .nav-link {
+        color: white !important;
+    }
+
+}
+
+
+
+@media(max-width:992px) {
+
+    .sm-btns {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .con {
+        width: 70%;
+    }
+
+
+
+
+    .phone-link,
+    .whatsapp-link {
+        display: flex;
+        justify-content: center;
+        padding: 4px 10px;
+        background-color: #292929;
+        width: 25%;
+        text-decoration: none;
+        /* Prevents distortion */
+    }
+
+
+    .color-change {
+        color: white;
+    }
+
+    .c-c {
+        color: white;
+        color: #1B8755;
+    }
+
+
+
+}
+
+
+
+.cart-lg {
+    margin: 0;
+}
+
+.offcanvas,
+.offcanvas-lg,
+.offcanvas-md,
+.offcanvas-sm,
+.offcanvas-xl,
+.offcanvas-xxl {
+    --bs-offcanvas-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cart-badge {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 11px;
+    line-height: 18px;
+    text-align: center;
+    top: 0;
+    left: 14px;
+    position: absolute;
+    z-index: 10;
+    padding: 0;
+}
+
+
+
+/*Nav-End */
+
+
+
+
+.hero {
+    background-image: url(Asset/abstract-blur-defocused-library-book-store-shop-interior\ \(1\).jpg);
+    background-size: cover;
+    /* Makes the image cover the section */
+    background-position: center;
+    /* Keeps the image centered */
+    background-repeat: no-repeat;
+    height: 50vh;
+    /* Full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: clamp(4rem, 2vw, 10rem);
+
+
+
+}
+
+@media (min-width: 553px) and (max-width: 991.98px) {
+    .hero {
+        height: 30vh;
+    }
+
+}
+
+
+.store-font {
+    font-size: clamp(3rem, 5vw, 10rem);
+
+}
+
+
+
+
+
+.opposite {
+    margin-top: 2rem;
+}
+
+.top {
+    border-bottom: 1px solid rgb(224, 223, 223);
+}
+
+
+
+
+img.scale {
+    transition: transform 0.4s ease;
+}
+
+img.scale:hover {
+    transform: scale(1.1);
+}
+
+
+.holder {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+
+}
+
+
+
+.card-holder {
+    background-color: #FEF3D6;
+    border-radius: 1rem;
+}
+
+
+.card-holder img {
+    width: 100%;
+    height: 220px;
+    /* Force equal height */
+    object-fit: contain;
+    /* Avoid image distortion */
+}
+
+@media(max-width:598px) {
+    .card-holder img {
+        width: 100%;
+        height: 150px;
+        /* Force equal height */
+        object-fit: contain;
+        /* Avoid image distortion */
+    }
+
+    .holder {
+        width: 47%;
+    }
+}
+
+
+
+
+.cart-btn {
+    border: none;
+    background-color: #00A991;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+.moq-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    /* Gold/Yellow */
+    color: white;
+    /* Dark text */
+    font-weight: bold;
+    padding: 6px 12px;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+    font-size: 0.8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+.foot-line {
+    border-bottom: 1px solid #01AB89;
+}
+
+.icon {
+    color: #01AB89;
+}
+
+footer {
+    background: url(Asset/black-dotted-mapa-mundi-vector\ 1.png) fixed;
+}
