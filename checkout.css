@@ -379,18 +379,25 @@ p {
 
 
 @media print {
-  body * {
-    visibility: hidden;   /* Hide everything */
-  }
+    body * {
+        visibility: hidden;
+        /* Hide everything */
+    }
 
-  #invoice, #invoice * {
-    visibility: visible;  /* Show only the invoice */
-  }
+    #invoice,
+    #invoice * {
+        visibility: visible;
+        /* Show only the invoice */
+    }
 
-  #invoice {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
+    #invoice {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.customImg-gg402 {
+    width: 20%;
 }
