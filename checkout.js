@@ -61,6 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("final-total").textContent = grandTotal.toLocaleString();
     });
 
+
+    function printInvoice() {
+        const modal = document.getElementById("paymentModal");
+        modal.style.display = "none";   // Hide modal
+        window.print();
+        modal.style.display = "flex";   // Show modal again
+    }
+
+
     document.getElementById("checkout-form").addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -126,6 +135,70 @@ Account Number: 1505790238
         document.getElementById("paymentRef").textContent = reference;
         document.getElementById("paymentModal").style.display = "flex";
 
+
+        // 💳 Paystack Button
+        document.getElementById("payWithPaystack").onclick = function () {
+
+            const handler = PaystackPop.setup({
+                key: "YOUR_PUBLIC_KEY_HERE",
+                email: email,
+                amount: total * 100,
+                currency: "NGN",
+                ref: reference,
+
+                callback: function (response) {
+
+                    alert("Payment successful!");
+
+                    printInvoice();
+
+
+                    const paidOwnerMessage = `✅ NEW ORDER (PAID)
+
+👤 ${fullName}
+📞 ${phone}
+💵 ₦${total.toLocaleString()}
+Ref: ${response.reference}`;
+
+                    const ownerURL = `https://wa.me/2348139964679?text=${encodeURIComponent(paidOwnerMessage)}`;
+                    window.location.href = ownerURL;
+
+                    localStorage.removeItem("gategps-cart");
+                },
+
+                onClose: function () {
+                    console.log("Payment window closed.");
+                }
+            });
+
+            handler.openIframe();
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // ✅ Copy account number
         document.getElementById("copyAccountBtn").onclick = () => {
             const accNum = document.getElementById("accountNumber").textContent;
@@ -135,6 +208,9 @@ Account Number: 1505790238
 
         // ✅ Continue to WhatsApp
         document.getElementById("continueWhatsApp").onclick = () => {
+
+            printInvoice();
+
             const ownerURL = `${waBase}2348139964679&text=${encodeURIComponent(ownerMessage)}`;
             window.location.href = ownerURL;
 
@@ -145,8 +221,8 @@ Account Number: 1505790238
 
             setTimeout(() => {
                 localStorage.removeItem("gategps-cart");
-                window.location.href = "thank-you.html";
-            }, 4500);
+                window.location.href = "store.html";
+            }, 7000);
         };
     });
 });

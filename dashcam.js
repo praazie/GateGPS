@@ -7,3 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
         touch: true
     });
 });
+
+
+document.getElementById("appDownload").addEventListener("click", function () {
+    window.open("https://philadgate.github.io/gategps-redirect/", "_blank");
+});

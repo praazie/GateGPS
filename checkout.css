@@ -371,3 +371,26 @@ p {
         transform: scale(1);
     }
 }
+
+
+
+
+
+
+
+@media print {
+  body * {
+    visibility: hidden;   /* Hide everything */
+  }
+
+  #invoice, #invoice * {
+    visibility: visible;  /* Show only the invoice */
+  }
+
+  #invoice {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
