@@ -221,7 +221,7 @@
                                 </span>
                             </a>
                         </div>
-                        <a href="https://gategps.com" class="ctn">Server Login</a>
+                        <button onclick="window.open('https://gategps.com', '_blank')" class="ctn">Server Login</button>
 
                     </div>
 
@@ -338,13 +338,14 @@
 
     <div id="invoice" class="d-none mt-4">
         <div>
+            <img src="GateGPS_Logos (2)/GateGPS_Logos/logo_green.png " class="img-fluid" alt="">
             <h4 class="text-center">GateGPS Invoice</h4>
-            <p><strong>Name:</strong> <span id="inv-name"></span></p>
-            <p><strong>Email:</strong> <span id="inv-email"></span></p>
-            <p><strong>Phone:</strong> <span id="inv-phone"></span></p>
-            <p><strong>Address:</strong> <span id="inv-address"></span></p>
-            <p><strong>Delivery Fee:</strong> ₦<span id="inv-delivery"></span></p>
-            <p><strong>Cart Total:</strong> ₦<span id="inv-subtotal"></span></p>
+            <p class="mb-3"><strong>Name:</strong> <span id="inv-name"></span></p>
+            <p class="mb-3"><strong>Email:</strong> <span id="inv-email"></span></p>
+            <p class="mb-3"><strong>Phone:</strong> <span id="inv-phone"></span></p>
+            <p class="mb-3"><strong>Address:</strong> <span id="inv-address"></span></p>
+            <p class="mb-3"><strong>Delivery Fee:</strong> ₦<span id="inv-delivery"></span></p>
+            <p class="mb-3"><strong>Cart Total:</strong> ₦<span id="inv-subtotal"></span></p>
             <h5><strong>Total:</strong> ₦<span id="inv-total"></span></h5>
             <button onclick="window.print()" class="btn btn-outline-primary mt-2">Print Invoice</button>
         </div>

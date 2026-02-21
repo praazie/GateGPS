@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function calculateDeliveryFee(state) {
         switch (state) {
-            case "Lagos": return 5000;
-            case "Others": return 7000;
+            case "Lagos": return 7000;
+            case "Others": return 10000;
             default: return 0;
         }
     }
