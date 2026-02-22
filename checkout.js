@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const products = [
         { id: 1, name: "GateGPS Tracker Device (GG402)", price: 24000, image: "Asset/GateGPS_Tracker_DualCommand_mic.png" },
-        { id: 2, name: "GateGPS Tracker Device (GG401)", price: 22000, image: "Asset/GateGPSTrackerDualCommandNonMic.png" },
+        { id: 2, name: "GateGPS Tracker Device (GG401)", price: 22000, image: "Asset/GateGPSTrackerDualCommandNonMic.png", imageClass: "customImg-gg401" },
         { id: 3, name: "GateGPS Tracker Relay", price: 2500, image: "Asset/mini_relay_gps.png" },
         { id: 4, name: "GateGPS Dashcam (GC01)", price: 130000, image: "Asset/H94bf2b7a629d43faba8099988f8708abo2.png" },
         { id: 5, name: "GateGPS Dashcam (GC02)", price: 120000, image: "Asset/Dashcam402.png" },
@@ -25,7 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
         subtotal += price;
         return `
             <div class="d-flex gap-3 align-items-center border-bottom py-2 checkout-item">
-                <img src="${product.image}" alt="${product.name}" style="width: 80px;" class="rounded">
+                
+<img 
+  src="${product.image}" 
+  alt="${product.name}" 
+  style="width: 80px;" 
+  class="rounded ${product.imageClass || ''}"
+>
+
                 <div>
                     <h6 class="mb-0">${product.name}</h6>
                     <p class="mb-0 small text-muted">Qty: ${item.quantity} × ₦${item.price.toLocaleString()}</p>

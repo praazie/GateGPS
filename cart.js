@@ -12,7 +12,7 @@ const products = [
         name: "GateGPS Tracker Device (GG401)",
         price: 22000,
         image: "Asset/GateGPSTrackerDualCommandNonMic.png",
-        imageClass: "customImg-gg402",
+        imageClass: "customImg-gg401",
     },
     {
         id: 3,
@@ -79,8 +79,12 @@ function renderCart() {
         itemEl.className = "cart-item d-flex align-items-center gap-3 border-bottom py-3";
 
         itemEl.innerHTML = `
-  
-      <img src="${product.image}" alt="${product.name}" width="80" ">
+  <img 
+  src="${product.image}" 
+  alt="${product.name}" 
+  width="80"
+  class="${product.imageClass ? product.imageClass : ''}"
+>
       <div class="flex-grow-1">
         <h6 class="mb-1">${product.name}</h6>
         <div class="d-flex align-items-center gap-2">
@@ -127,3 +131,5 @@ function renderCart() {
 document.addEventListener("DOMContentLoaded", () => {
     renderCart();
 });
+
+
