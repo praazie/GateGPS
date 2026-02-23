@@ -147,7 +147,7 @@ Account Number: 1505790238
         document.getElementById("payWithPaystack").onclick = function () {
 
             const handler = PaystackPop.setup({
-                key: "YOUR_PUBLIC_KEY_HERE",
+                key: "pk_test_71692f34ce020f1771f7c03c9f7a3215c631d6f0e1", // Replace with your Paystack public key
                 email: email,
                 amount: total * 100,
                 currency: "NGN",
