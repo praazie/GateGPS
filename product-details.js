@@ -54,7 +54,7 @@ const products = [
   {
     id: 4,
     name: "GateGPS Dashcam (GC01)",
-    price: 130000,
+    price: 140000,
     oldPrice: 150000,
     image: "Asset/H94bf2b7a629d43faba8099988f8708abo2.png",
     minOrder: 1,
@@ -63,7 +63,7 @@ const products = [
   {
     id: 5,
     name: "GateGPS Dashcam (GC02)",
-    price: 120000,
+    price: 130000,
     image: "Asset/Dashcam402.png",
     minOrder: 1,
     imageClass: "custom-img-402",
@@ -72,9 +72,9 @@ const products = [
     id: 6,
     name: "GateGPS Memory Card",
     priceOptions: [
-      { size: "32GB", price: 5000 },
-      { size: "64GB", price: 9000 },
-      { size: "128GB", price: 13000 }
+      { size: "32GB", price: 7500 },
+      { size: "64GB", price: 12000 },
+      { size: "128GB", price: 18000 }
     ],
     image: "Asset/GateGps_Dashcam_MemoryCard.png",
     minOrder: 1,

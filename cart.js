@@ -23,13 +23,13 @@ const products = [
     {
         id: 4,
         name: "GateGPS Dashcam (GC01)",
-        price: 130000,
+        price: 140000,
         image: "Asset/H94bf2b7a629d43faba8099988f8708abo2.png"
     },
     {
         id: 5,
         name: "GateGPS Dashcam (GC02)",
-        price: 120000,
+        price: 130000,
         image: "Asset/Dashcam402.png"
     },
     {
