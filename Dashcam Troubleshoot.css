@@ -1,0 +1,32 @@
+.header {
+    background: #138a6d;
+    color: white;
+    border-radius: 12px;
+}
+
+.support-btn {
+    background: #138a6d;
+    color: white;
+}
+
+
+.up {
+    margin-top: 5rem;
+}
+
+
+
+
+
+/* footer */
+.foot-line {
+    border-bottom: 1px solid #01AB89;
+}
+
+.icon {
+    color: #01AB89;
+}
+
+footer {
+    background: url(Asset/black-dotted-mapa-mundi-vector\ 1.png) fixed;
+}

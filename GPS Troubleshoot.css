@@ -1,0 +1,46 @@
+        body {
+            background: #f4f6f8;
+        }
+
+        .header {
+            background: #00AA88;
+            color: white;
+            border-radius: 12px;
+        }
+
+        .support-btn {
+
+            padding: 2px 8px;
+            width: 100%;
+            background: #00AA88;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .support-btn:hover {
+            background: #024E3D;
+        }
+
+
+
+        .up {
+            margin-top: 5rem;
+        }
+
+
+
+
+        /* footer */
+        .foot-line {
+            border-bottom: 1px solid #01AB89;
+        }
+
+        .icon {
+            color: #01AB89;
+        }
+
+        footer {
+            background: url(Asset/black-dotted-mapa-mundi-vector\ 1.png) fixed;
+        }
