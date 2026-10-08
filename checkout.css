@@ -404,3 +404,13 @@ p {
     margin-left: 37px;
     padding-right: 2px;
 }
+
+
+
+.navbar .dropdown {
+    z-index: 1060;
+}
+
+.navbar .dropdown-menu {
+    z-index: 1070;
+}

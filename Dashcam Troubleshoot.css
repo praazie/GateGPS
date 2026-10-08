@@ -30,3 +30,14 @@
 footer {
     background: url(Asset/black-dotted-mapa-mundi-vector\ 1.png) fixed;
 }
+
+
+
+
+.navbar .dropdown {
+    z-index: 1060;
+}
+
+.navbar .dropdown-menu {
+    z-index: 1070;
+}
