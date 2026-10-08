@@ -712,3 +712,19 @@ p {
 footer {
   background: url(Asset/black-dotted-mapa-mundi-vector\ 1.png) fixed;
 }
+
+
+.navbar-nav {
+    position: relative;
+    z-index: 1050;
+}
+
+.navbar .dropdown {
+    position: relative;
+    z-index: 1060;
+}
+
+.navbar .dropdown-menu {
+    position: absolute;
+    z-index: 1070;
+}
