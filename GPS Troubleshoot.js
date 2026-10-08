@@ -21,3 +21,5 @@ searchInput.addEventListener("keyup", function () {
     })
 
 })
+
+
