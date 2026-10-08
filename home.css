@@ -714,17 +714,11 @@ footer {
 }
 
 
-.navbar-nav {
-    position: relative;
-    z-index: 1050;
-}
 
 .navbar .dropdown {
-    position: relative;
-    z-index: 1060;
+  z-index: 1060;
 }
 
 .navbar .dropdown-menu {
-    position: absolute;
-    z-index: 1070;
+  z-index: 1070;
 }
