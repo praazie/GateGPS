@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // ✅ Detect platform
         const waBase = "whatsapp://send?phone=";
         // ✅ WhatsApp message for Owner
-        const ownerMessage = `🚨 NEW ORDER RECEIVED 🚨
+        const ownerMessage = ` NEW ORDER RECEIVED 
 Status: Payment Pending ❌
 
 👤 Name: ${fullName}
@@ -128,12 +128,12 @@ Your Order Ref: ${reference}
 🛒 Items Ordered:
 ${cart.map(item => `• ${item.name} x${item.quantity}`).join("\n")}
 
-💵 Total: ₦${total.toLocaleString()} (including delivery)
+ Total: ₦${total.toLocaleString()} (including delivery)
 
-🏦 Please make your payment to:
-Bank: ACCESS BANK
-Account Name: NNAEMEKA CHIBUIKE
-Account Number: 1505790238
+ Please make your payment to:
+Bank: MONIEPONT MFB
+Account Name: GATEGPS LTD
+Account Number: 6679306657
 
 ⚠️ Your order will not be shipped until we receive your payment.`;
 
